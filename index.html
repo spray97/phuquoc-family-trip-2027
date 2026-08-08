@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071b2f">
+  <meta name="description" content="2027 푸꾸옥 11명 가족여행 안내 페이지">
+  <title>우리 가족 푸꾸옥 여행</title>
+  <style>
+    :root {
+      --ink: #10243a;
+      --muted: #6c7d8d;
+      --paper: #f5f8fa;
+      --card: #ffffff;
+      --line: #e4ebef;
+      --ocean: #087ea4;
+      --deep: #071b2f;
+      --mint: #d8f3e8;
+      --coral: #ff826d;
+      --sun: #ffc857;
+      --shadow: 0 14px 35px rgba(9, 39, 64, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      line-height: 1.55; -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .hero { background: linear-gradient(150deg, #062039 0%, #0d5573 60%, #1b9aaf 100%); color: white; padding: 24px 20px 30px; position: relative; overflow: hidden; }
+    .hero::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,200,87,.18); right: -95px; top: -90px; }
+    .hero-inner, main { width: min(100%, 760px); margin: 0 auto; }
+    .topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; position: relative; z-index: 1; }
+    .eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #bceaf0; font-weight: 800; }
+    .share { border: 1px solid rgba(255,255,255,.32); background: rgba(255,255,255,.12); color: white; border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; }
+    h1 { font-size: clamp(31px, 8vw, 54px); line-height: 1.06; letter-spacing: -.055em; margin: 36px 0 14px; position: relative; z-index: 1; }
+    .hero-copy { color: #dceff2; margin: 0; font-size: 15px; position: relative; z-index: 1; }
+    .flight-card { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; background: rgba(4, 21, 38, .42); border: 1px solid rgba(255,255,255,.15); border-radius: 20px; padding: 17px; margin-top: 24px; position: relative; z-index: 1; }
+    .flight-card small { color: #a9d4dc; display: block; font-size: 11px; margin-bottom: 2px; }
+    .flight-card strong { font-size: 17px; }
+    .flight-card .arrow { color: var(--sun); font-size: 20px; }
+    main { padding: 18px 16px 110px; }
+    .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin: -38px 0 22px; position: relative; z-index: 2; }
+    .quick { background: var(--card); border-radius: 17px; padding: 14px 11px; box-shadow: var(--shadow); }
+    .quick b { display: block; font-size: 19px; letter-spacing: -.04em; }
+    .quick span { color: var(--muted); font-size: 11px; }
+    .section { margin-top: 28px; scroll-margin-top: 15px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 11px; }
+    .section-head h2 { margin: 0; font-size: 21px; letter-spacing: -.045em; }
+    .section-head p { color: var(--muted); font-size: 12px; margin: 0; }
+    .callout { border-radius: 20px; padding: 17px; background: linear-gradient(135deg, #fff6dd, #fffdf6); border: 1px solid #f4e4b9; }
+    .callout strong { display: block; margin-bottom: 4px; }
+    .callout p { margin: 0; font-size: 14px; color: #53606b; }
+    .timeline { position: relative; }
+    .timeline::before { content: ""; position: absolute; left: 17px; top: 12px; bottom: 12px; width: 2px; background: #d9e8ec; }
+    .day { position: relative; padding-left: 48px; margin: 16px 0; }
+    .day-dot { position: absolute; left: 7px; top: 17px; width: 21px; height: 21px; border-radius: 50%; background: var(--ocean); border: 5px solid var(--paper); box-shadow: 0 0 0 2px #b8e2e8; }
+    .day-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 6px 18px rgba(9,39,64,.04); }
+    .day-title { padding: 15px 16px 12px; background: linear-gradient(110deg, #edfaff, white); }
+    .day-title small { display: block; color: var(--ocean); font-size: 12px; font-weight: 800; }
+    .day-title h3 { margin: 3px 0 0; font-size: 18px; letter-spacing: -.04em; }
+    .day-body { padding: 14px 16px 16px; font-size: 14px; }
+    .day-body ul { margin: 0; padding-left: 20px; }
+    .day-body li + li { margin-top: 7px; }
+    .tag { display: inline-block; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 800; margin: 0 4px 4px 0; background: var(--mint); color: #146452; }
+    .tag.blue { background: #e3f4fb; color: #086d91; }
+    .tag.pink { background: #ffe7e2; color: #ad4f42; }
+    .choice { margin-top: 13px; padding: 11px 12px; border-left: 3px solid var(--coral); background: #fff7f4; color: #6c5550; font-size: 13px; border-radius: 0 11px 11px 0; }
+    .cards { display: grid; gap: 11px; }
+    .info-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
+    .info-card h3 { margin: 0 0 5px; font-size: 16px; letter-spacing: -.035em; }
+    .info-card p { margin: 0; color: #63717b; font-size: 13px; }
+    .info-card .why { margin-top: 10px; color: var(--ink); font-size: 13px; }
+    .rank { float: right; color: #d89518; font-size: 12px; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .mini { background: #f2f7f8; border-radius: 15px; padding: 13px; }
+    .mini b { display: block; font-size: 14px; margin-bottom: 3px; }
+    .mini p { font-size: 12px; margin: 0; color: var(--muted); }
+    .checklist { display: grid; gap: 9px; }
+    .check { display: flex; align-items: flex-start; gap: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 15px; padding: 12px; font-size: 14px; }
+    .check input { accent-color: var(--ocean); margin-top: 4px; width: 17px; height: 17px; flex: 0 0 auto; }
+    .check.done span { color: #89959b; text-decoration: line-through; }
+    .note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+    .bottom-nav { position: fixed; z-index: 10; bottom: 0; left: 0; right: 0; padding: 9px max(12px, env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); border-top: 1px solid var(--line); display: flex; justify-content: center; gap: 4px; }
+    .bottom-nav a { color: #78909c; text-decoration: none; font-size: 11px; font-weight: 800; text-align: center; padding: 4px 10px; border-radius: 12px; }
+    .bottom-nav a:first-child { color: var(--ocean); background: #e9f7fa; }
+    .footer { color: #91a0a7; font-size: 11px; text-align: center; margin-top: 30px; }
+    @media (min-width: 620px) { main { padding-left: 24px; padding-right: 24px; } .cards.three { grid-template-columns: repeat(3, 1fr); } .cards.two { grid-template-columns: repeat(2, 1fr); } .bottom-nav { display: none; } main { padding-bottom: 40px; } }
+    @media (max-width: 360px) { .quick { padding-left: 8px; padding-right: 8px; } .quick b { font-size: 17px; } .flight-card { padding: 13px 10px; } }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="topline"><span class="eyebrow">OUR FAMILY TRIP · 2027</span><button class="share" id="shareBtn">↗ 공유하기</button></div>
+      <h1>우리 가족<br>푸꾸옥 여행</h1>
+      <p class="hero-copy">11명이 함께 가는 7박 8일의 따뜻한 겨울 휴양 여행<br>무리하지 않고, 좋은 장면은 함께 오래 보기</p>
+      <div class="flight-card" aria-label="항공 일정">
+        <div><small>1/18 월 · KE485</small><strong>ICN 18:15</strong></div><div class="arrow">→</div><div><small>푸꾸옥 도착</small><strong>PQC 22:15</strong></div>
+      </div>
+      <div class="flight-card" style="margin-top:8px"><div><small>1/25 월 · KE486</small><strong>PQC 23:45</strong></div><div class="arrow">→</div><div><small>1/26 화 도착</small><strong>ICN 06:45</strong></div></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="quick-grid">
+      <div class="quick"><b>11명</b><span>우리 가족</span></div>
+      <div class="quick"><b>7박 8일</b><span>2027.01.18 — 25</span></div>
+      <div class="quick"><b>2곳</b><span>북부 + 중부 숙소</span></div>
+    </div>
+
+    <section class="section" id="summary">
+      <div class="callout"><strong>이번 여행의 원칙</strong><p>북부는 꼭 보고, 숙소는 한 번만 옮기고, 남부는 하루에 다녀와요. 어르신과 아이들이 쉬는 시간을 일정 안에 미리 넣었습니다.</p></div>
+    </section>
+
+    <section class="section" id="schedule">
+      <div class="section-head"><h2>날짜별 일정</h2><p>전체조 + 선택조</p></div>
+      <div class="timeline">
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/18 MON · DAY 1</small><h3>도착 & 0.5박</h3></div><div class="day-body"><span class="tag blue">KE485</span><span class="tag">늦은 체크인</span><ul><li>18:15 인천 출발 → 22:15 푸꾸옥 도착</li><li>입국·수하물·픽업 후 공항/롱비치·즈엉동권 숙소로 이동</li><li>도착 당일은 북부까지 가지 않고 바로 취침</li></ul><div class="choice"><b>체크 포인트</b> 24시간 프런트 · 심야 픽업 · 11명 객실 · 조식 시간을 미리 확인해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/19 TUE · DAY 2</small><h3>북부 이동 & 그랜드월드</h3></div><div class="day-body"><span class="tag">북부 숙소 체크인</span><ul><li>늦은 아침 식사 후 16인승 전용차량으로 북부 이동</li><li>체크인·점심·수영장·해변에서 회복</li><li>저녁에는 그랜드월드 산책과 식사</li></ul><div class="choice">어르신·휴식 희망자는 숙소에 남고, 청년·학생은 야간 산책 선택조로 움직여요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/20 WED · DAY 3</small><h3>빈펄 사파리</h3></div><div class="day-body"><span class="tag pink">북부 필수</span><ul><li>오전 빈펄 사파리 관람</li><li>점심 후 리조트 복귀, 수영장·낮잠·마사지</li><li>저녁은 리조트 식사 또는 그랜드월드</li></ul><div class="choice">사파리는 보행량이 있으니 어르신은 그늘·화장실·앉을 곳·내부 이동수단부터 확인해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/21 THU · DAY 4</small><h3>빈원더스 또는 북부 휴양</h3></div><div class="day-body"><span class="tag blue">활동조</span><span class="tag">휴식조</span><ul><li>청년·학생: 놀이기구·워터파크·아쿠아리움·공연</li><li>어르신·희망 가족: 리조트 수영장·해변·마사지</li><li>오후 그랜드월드에서 합류 가능</li></ul><div class="choice">빈원더스는 하루 종일 모두 함께 움직이기보다 관심사별 선택조가 편해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/22 FRI · DAY 5</small><h3>중부 숙소 이동 & 야시장</h3></div><div class="day-body"><span class="tag">숙소 이동</span><ul><li>늦은 조식 후 체크아웃, 짐은 전용차량으로 이동</li><li>중부/서부 숙소 체크인 후 롱비치 휴식</li><li>저녁 즈엉동 야시장·딘커우</li></ul><div class="choice">야시장은 혼잡하므로 어르신은 좌석 있는 식당에서 먼저 식사하고 젊은 층만 탐방해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/23 SAT · DAY 6</small><h3>해변·카페·로컬 식사</h3></div><div class="day-body"><span class="tag">회복일</span><ul><li>오전 숙소 수영장·해변</li><li>점심 후 2~3시간 휴식</li><li>늦은 오후 롱비치 일몰 카페</li><li>저녁 해산물 또는 베트남 음식 단체 예약</li></ul></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/24 SUN · DAY 7</small><h3>남부 당일투어</h3></div><div class="day-body"><span class="tag pink">전용차량</span><ul><li>혼똔섬 케이블카 + 해변 휴양</li><li>호국사 또는 켐비치 중 1곳</li><li>17~18시 중부 복귀</li></ul><div class="choice">세 곳 이상 욕심내지 않아요. 바람·비로 케이블카가 어려우면 중부 휴양일로 바꿔요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/25 MON · DAY 8</small><h3>마지막 휴식 & 귀국</h3></div><div class="day-body"><span class="tag blue">KE486 23:45</span><ul><li>조식·수영장·해변 또는 자유시간</li><li>쇼핑·카페·선물 구입</li><li>레이트 체크아웃 또는 데이유스 객실 이용</li><li>20시 전후 숙소 출발 → 공항</li></ul></div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="stay">
+      <div class="section-head"><h2>숙소 후보</h2><p>부대시설 + 이동 편의</p></div>
+      <div class="cards">
+        <div class="info-card"><span class="rank">북부 1순위</span><h3>빈홀리데이 피에스타</h3><p>수영장 · 키즈존 · 헬스장 · 셔틀</p><p class="why">북부 관광 접근성과 가성비의 균형이 좋아요. 11명 객실을 같은 층에 배정할 수 있는지 확인해요.</p></div>
+        <div class="info-card"><span class="rank">북부 대안</span><h3>빈펄 원더월드</h3><p>넓은 풀빌라형 · 사파리·빈원더스 접근</p><p class="why">여러 세대가 함께 머물기 좋지만 외부 식당 이동이 불편할 수 있어요.</p></div>
+        <div class="info-card"><span class="rank">중부 1순위</span><h3>씨쉘스 푸꾸옥</h3><p>야시장 접근 · 해변 · 수영장 · 스파</p><p class="why">중부 생활권과 공항 접근성이 좋아요. 마지막 날 레이트 체크아웃도 문의해요.</p></div>
+        <div class="info-card"><span class="rank">중부 대안</span><h3>두짓 프린세스 문라이즈</h3><p>해변 · 인피니티풀 · 키즈클럽 · 레스토랑</p><p class="why">리조트 안에서 쉬기 좋고, 남부 당일투어의 중간 거점으로 활용할 수 있어요.</p></div>
+      </div>
+      <p class="note">후보 선정 기준: 한국인 후기에서 반복 언급된 위치·시설·가성비 + 11명 가족의 객실·차량 조건. 가격과 운영 여부는 예약 시점에 다시 확인해요.</p>
+    </section>
+
+    <section class="section" id="food">
+      <div class="section-head"><h2>먹거리 & 카페</h2><p>11명은 예약 우선</p></div>
+      <div class="split">
+        <div class="mini"><b>로컬 맛집 후보</b><p>Ra Khoi Seafood<br>Pho Hong Anh<br>마담 타오<br>딘커우 야시장</p></div>
+        <div class="mini"><b>쉬어가기 좋은 곳</b><p>그랜드월드 운하 카페<br>롱비치 해변·호텔 카페<br>킹콩마트 주변 카페</p></div>
+      </div>
+      <p class="note">해산물은 중량·시세·서비스료를 주문 전에 확인하고, 카페는 좌석·화장실·차량 하차 위치를 먼저 확인해요.</p>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="section-head"><h2>우리 가족 운영 약속</h2><p>여행이 편해지는 4가지</p></div>
+      <div class="cards two">
+        <div class="info-card"><h3>🚐 이동</h3><p>16인승 기사 포함 전용차량 1대가 기본. 대안은 7인승 2대예요.</p></div>
+        <div class="info-card"><h3>🛏 객실</h3><p>어르신은 엘리베이터 가까운 조용한 방, 가족은 같은 층·연결 객실 우선.</p></div>
+        <div class="info-card"><h3>🌴 체력</h3><p>관광지 2~3곳, 점심 뒤 2~3시간 휴식, 매일 선택조 운영.</p></div>
+        <div class="info-card"><h3>🍽 식사</h3><p>11명 단체석·메뉴·서비스료·카드 결제를 전날까지 확인.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="check">
+      <div class="section-head"><h2>예약 체크리스트</h2><p>체크하면 이 기기에 저장돼요</p></div>
+      <div class="checklist" id="checklist">
+        <label class="check"><input type="checkbox"><span>0.5박 숙소 24시간 프런트·심야 픽업 확인</span></label>
+        <label class="check"><input type="checkbox"><span>북부·중부 객실 11명, 침대 수, 같은 층 확인</span></label>
+        <label class="check"><input type="checkbox"><span>16인승 차량 좌석·짐·대기시간·야간요금 확인</span></label>
+        <label class="check"><input type="checkbox"><span>사파리·빈원더스 운영시간과 셔틀 확인</span></label>
+        <label class="check"><input type="checkbox"><span>케이블카 운행·우천 대체 일정 확인</span></label>
+        <label class="check"><input type="checkbox"><span>1/25 레이트 체크아웃 또는 데이유스 확보</span></label>
+        <label class="check"><input type="checkbox"><span>여권·입국요건·여행자보험 확인</span></label>
+      </div>
+    </section>
+
+    <p class="footer">우리 가족 푸꾸옥 여행 · 2027.01.18 — 01.25<br>김효정 선생님의 2019 여행자료와 한국 여행객 후기 조사 기반</p>
+  </main>
+
+  <nav class="bottom-nav" aria-label="빠른 이동">
+    <a href="#top">처음</a><a href="#schedule">일정</a><a href="#stay">숙소</a><a href="#food">먹거리</a><a href="#check">체크</a>
+  </nav>
+  <script>
+    const checks = [...document.querySelectorAll('#checklist input')];
+    const saved = JSON.parse(localStorage.getItem('phuquoc-2027-checks') || '[]');
+    checks.forEach((box, i) => { box.checked = !!saved[i]; box.closest('.check').classList.toggle('done', box.checked); box.addEventListener('change', () => { box.closest('.check').classList.toggle('done', box.checked); localStorage.setItem('phuquoc-2027-checks', JSON.stringify(checks.map(x => x.checked))); }); });
+    document.getElementById('shareBtn').addEventListener('click', async () => { const data = { title: '우리 가족 푸꾸옥 여행', text: '2027년 푸꾸옥 가족여행 계획을 확인해 주세요.', url: location.href }; try { if (navigator.share) await navigator.share(data); else { await navigator.clipboard.writeText(location.href); alert('페이지 주소를 복사했어요.'); } } catch (e) {} });
+  </script>
+</body>
+</html>
