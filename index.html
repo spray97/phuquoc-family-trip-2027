@@ -37,7 +37,8 @@
     .share { border: 1px solid rgba(255,255,255,.32); background: rgba(255,255,255,.12); color: white; border-radius: 999px; padding: 8px 12px; font-size: 12px; font-weight: 700; }
     h1 { font-size: clamp(24px, 8.5vw, 54px); line-height: 1.06; letter-spacing: -.065em; white-space: nowrap; margin: 36px 0 14px; position: relative; z-index: 1; }
     .hero-copy { color: #dceff2; margin: 0; font-size: clamp(10px, 3.6vw, 15px); letter-spacing: -.06em; white-space: nowrap; position: relative; z-index: 1; }
-    .flight-card { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; background: rgba(4, 21, 38, .42); border: 1px solid rgba(255,255,255,.15); border-radius: 20px; padding: 17px; margin-top: 24px; position: relative; z-index: 1; }
+    .flight-card { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; background: #082d48; border: 1px solid rgba(255,255,255,.22); border-radius: 20px; padding: 17px; margin-top: 24px; position: relative; z-index: 1; }
+    .flight-label { display: inline-block; color: #06243a; background: var(--sun); border-radius: 999px; padding: 3px 8px; font-size: 11px; font-weight: 900; margin-bottom: 6px; }
     .flight-card small { color: #b9e1e7; display: block; font-size: 13px; margin-bottom: 3px; }
     .flight-card strong { font-size: 22px; letter-spacing: -.035em; }
     .flight-card .arrow { color: var(--sun); font-size: 25px; }
@@ -63,10 +64,15 @@
     .day-title { padding: 15px 16px 12px; background: linear-gradient(110deg, #edfaff, white); }
     .day-title small { display: block; color: var(--ocean); font-size: 15px; font-weight: 900; letter-spacing: -.02em; }
     .day-title h3 { margin: 3px 0 0; font-size: 22px; letter-spacing: -.045em; }
-    .day-body { padding: 14px 16px 16px; font-size: 14px; }
-    .day-body ul { margin: 0; padding-left: 20px; }
+    .day-body { padding: 14px 16px 16px; font-size: 15px; }
+    .day-body ul { margin: 0; padding-left: 0; list-style: none; }
     .day-body li + li { margin-top: 7px; }
-    .day-body li b { display: inline-block; min-width: 94px; color: var(--ocean); font-size: 13px; font-variant-numeric: tabular-nums; }
+    .day-body li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 6px; align-items: start; }
+    .day-body li b { display: block; min-width: 0; color: var(--ocean); font-size: 13px; line-height: 1.55; font-variant-numeric: tabular-nums; }
+    .day-jump { display: flex; gap: 7px; overflow-x: auto; padding: 2px 1px 8px; scrollbar-width: none; }
+    .day-jump::-webkit-scrollbar { display: none; }
+    .day-jump a { flex: 0 0 auto; min-height: 40px; display: inline-flex; align-items: center; text-decoration: none; border: 1px solid #cde3e8; border-radius: 999px; padding: 0 13px; color: #356674; background: white; font-size: 13px; font-weight: 900; }
+    .day-jump a:hover, .day-jump a:focus { color: white; background: var(--ocean); border-color: var(--ocean); }
     .tag { display: inline-block; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 800; margin: 0 4px 4px 0; background: var(--mint); color: #146452; }
     .tag.blue { background: #e3f4fb; color: #086d91; }
     .tag.pink { background: #ffe7e2; color: #ad4f42; }
@@ -87,9 +93,11 @@
     .check.done span { color: #89959b; text-decoration: line-through; }
     .note { font-size: 12px; color: var(--muted); margin-top: 10px; }
     .bottom-nav { position: fixed; z-index: 10; bottom: 0; left: 0; right: 0; padding: 9px max(12px, env(safe-area-inset-left)) calc(9px + env(safe-area-inset-bottom)); background: rgba(255,255,255,.94); backdrop-filter: blur(14px); border-top: 1px solid var(--line); display: flex; justify-content: center; gap: 4px; }
-    .bottom-nav a { color: #78909c; text-decoration: none; font-size: 11px; font-weight: 800; text-align: center; padding: 4px 10px; border-radius: 12px; }
-    .bottom-nav a:first-child { color: var(--ocean); background: #e9f7fa; }
-    .footer { color: #91a0a7; font-size: 11px; text-align: center; margin-top: 30px; }
+    .bottom-nav a { color: #526b78; text-decoration: none; font-size: 12px; font-weight: 900; text-align: center; min-height: 42px; display: inline-flex; align-items: center; padding: 4px 9px; border-radius: 12px; }
+    .bottom-nav a.active { color: var(--ocean); background: #e9f7fa; }
+    .footer { color: #687e89; font-size: 12px; text-align: center; margin-top: 30px; }
+    :focus-visible { outline: 3px solid #ffc857; outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     @media (min-width: 620px) { main { padding-left: 24px; padding-right: 24px; } .cards.three { grid-template-columns: repeat(3, 1fr); } .cards.two { grid-template-columns: repeat(2, 1fr); } .bottom-nav { display: none; } main { padding-bottom: 40px; } }
     @media (max-width: 360px) { .quick { padding-left: 8px; padding-right: 8px; } .quick b { font-size: 21px; } .flight-card { padding: 13px 10px; } .flight-card strong { font-size: 19px; } }
   </style>
@@ -120,6 +128,7 @@
 
     <section class="section" id="schedule">
       <div class="section-head"><h2>날짜별 일정</h2><p>전체조 + 선택조</p></div>
+      <nav class="day-jump" aria-label="날짜 바로가기"><a href="#day1">1/18</a><a href="#day2">1/19</a><a href="#day3">1/20</a><a href="#day4">1/21</a><a href="#day5">1/22</a><a href="#day6">1/23</a><a href="#day7">1/24</a><a href="#day8">1/25</a></nav>
       <div class="timeline">
         <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/18 MON · DAY 1</small><h3>도착 & 0.5박</h3></div><div class="day-body"><span class="tag blue">KE485</span><span class="tag">늦은 체크인</span><ul><li><b>18:15~22:15</b>인천 출발 → 푸꾸옥 도착</li><li><b>22:15~23:45</b>입국심사·수하물 수령·화장실·픽업 준비</li><li><b>23:45~00:30</b>공항/롱비치·즈엉동권 숙소로 이동·체크인</li><li><b>00:30 이후</b>취침 — 도착 당일은 북부까지 가지 않기</li></ul><div class="choice"><b>체크 포인트</b> 24시간 프런트 · 심야 픽업 · 11명 객실 · 조식 시간을 미리 확인해요.</div></div></div></article>
         <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/19 TUE · DAY 2</small><h3>북부 이동 & 그랜드월드</h3></div><div class="day-body"><span class="tag">북부 숙소 체크인</span><ul><li><b>08:30~09:30</b>기상·조식·짐 정리</li><li><b>10:00~12:00</b>16인승 전용차량으로 북부 이동</li><li><b>12:00~14:00</b>점심·체크인·객실 배정</li><li><b>14:00~16:30</b>수영장·해변·낮잠 회복 시간</li><li><b>17:00~20:30</b>그랜드월드 산책·카페·저녁 식사</li><li><b>20:30~21:30</b>숙소 복귀·휴식</li></ul><div class="choice">어르신·휴식 희망자는 숙소에 남고, 청년·학생은 야간 산책 선택조로 움직여요.</div></div></div></article>
@@ -163,7 +172,8 @@
     </section>
 
     <section class="section" id="check">
-      <div class="section-head"><h2>예약 체크리스트</h2><p>체크하면 이 기기에 저장돼요</p></div>
+      <div class="section-head"><h2>예약 체크리스트</h2><p id="progress">0/7 완료</p></div>
+      <p class="note">체크 상태는 이 기기의 브라우저에만 저장됩니다. 가족과 체크 상태를 공유하려면 각자 확인해 주세요.</p>
       <div class="checklist" id="checklist">
         <label class="check"><input type="checkbox"><span>0.5박 숙소 24시간 프런트·심야 픽업 확인</span></label>
         <label class="check"><input type="checkbox"><span>북부·중부 객실 11명, 침대 수, 같은 층 확인</span></label>
@@ -179,13 +189,22 @@
   </main>
 
   <nav class="bottom-nav" aria-label="빠른 이동">
-    <a href="#top">처음</a><a href="#schedule">일정</a><a href="#stay">숙소</a><a href="#food">먹거리</a><a href="#check">체크</a>
+    <a class="active" href="#top" data-target="top">처음</a><a href="#schedule" data-target="schedule">일정</a><a href="#stay" data-target="stay">숙소</a><a href="#food" data-target="food">먹거리</a><a href="#check" data-target="check">체크</a><a href="island.html">정보</a>
   </nav>
   <script>
     const checks = [...document.querySelectorAll('#checklist input')];
     const saved = JSON.parse(localStorage.getItem('phuquoc-2027-checks') || '[]');
     checks.forEach((box, i) => { box.checked = !!saved[i]; box.closest('.check').classList.toggle('done', box.checked); box.addEventListener('change', () => { box.closest('.check').classList.toggle('done', box.checked); localStorage.setItem('phuquoc-2027-checks', JSON.stringify(checks.map(x => x.checked))); }); });
     document.getElementById('shareBtn').addEventListener('click', async () => { const data = { title: '우리 가족 푸꾸옥 여행', text: '2027년 푸꾸옥 가족여행 계획을 확인해 주세요.', url: location.href }; try { if (navigator.share) await navigator.share(data); else { await navigator.clipboard.writeText(location.href); alert('페이지 주소를 복사했어요.'); } } catch (e) {} });
+  </script>
+  <script>
+    (() => {
+      const days = [...document.querySelectorAll('.day')];
+      days.forEach((day, i) => { day.id = `day${i + 1}`; day.querySelector('.day-dot')?.setAttribute('aria-hidden', 'true'); });
+      document.querySelectorAll('.flight-card').forEach((card, i) => { const label = document.createElement('span'); label.className = 'flight-label'; label.textContent = i === 0 ? '출국' : '귀국'; card.querySelector('div')?.prepend(label); });
+      const boxes = [...document.querySelectorAll('#checklist input')]; const progress = document.getElementById('progress'); const updateProgress = () => { progress.textContent = `${boxes.filter(box => box.checked).length}/${boxes.length} 완료`; }; updateProgress(); boxes.forEach(box => box.addEventListener('change', updateProgress));
+      const navLinks = [...document.querySelectorAll('.bottom-nav a[data-target]')]; const sections = navLinks.map(link => document.getElementById(link.dataset.target)).filter(Boolean); const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) navLinks.forEach(link => link.classList.toggle('active', link.dataset.target === entry.target.id)); }), { rootMargin: '-25% 0px -65% 0px' }); sections.forEach(section => observer.observe(section));
+    })();
   </script>
 </body>
 </html>
