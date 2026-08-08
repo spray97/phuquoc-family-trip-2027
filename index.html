@@ -53,17 +53,20 @@
     .callout { border-radius: 20px; padding: 17px; background: linear-gradient(135deg, #fff6dd, #fffdf6); border: 1px solid #f4e4b9; }
     .callout strong { display: block; margin-bottom: 4px; }
     .callout p { margin: 0; font-size: 14px; color: #53606b; }
+    .quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+    .quick-actions a { display: block; text-align: center; text-decoration: none; color: var(--ocean); background: var(--card); border: 1px solid #c9e5eb; border-radius: 14px; padding: 12px 8px; font-size: 13px; font-weight: 900; }
     .timeline { position: relative; }
     .timeline::before { content: ""; position: absolute; left: 17px; top: 12px; bottom: 12px; width: 2px; background: #d9e8ec; }
     .day { position: relative; padding-left: 48px; margin: 16px 0; }
     .day-dot { position: absolute; left: 7px; top: 17px; width: 21px; height: 21px; border-radius: 50%; background: var(--ocean); border: 5px solid var(--paper); box-shadow: 0 0 0 2px #b8e2e8; }
     .day-card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 6px 18px rgba(9,39,64,.04); }
     .day-title { padding: 15px 16px 12px; background: linear-gradient(110deg, #edfaff, white); }
-    .day-title small { display: block; color: var(--ocean); font-size: 12px; font-weight: 800; }
-    .day-title h3 { margin: 3px 0 0; font-size: 18px; letter-spacing: -.04em; }
+    .day-title small { display: block; color: var(--ocean); font-size: 15px; font-weight: 900; letter-spacing: -.02em; }
+    .day-title h3 { margin: 3px 0 0; font-size: 22px; letter-spacing: -.045em; }
     .day-body { padding: 14px 16px 16px; font-size: 14px; }
     .day-body ul { margin: 0; padding-left: 20px; }
     .day-body li + li { margin-top: 7px; }
+    .day-body li b { display: inline-block; min-width: 94px; color: var(--ocean); font-size: 13px; font-variant-numeric: tabular-nums; }
     .tag { display: inline-block; border-radius: 999px; padding: 4px 8px; font-size: 11px; font-weight: 800; margin: 0 4px 4px 0; background: var(--mint); color: #146452; }
     .tag.blue { background: #e3f4fb; color: #086d91; }
     .tag.pink { background: #ffe7e2; color: #ad4f42; }
@@ -112,20 +115,20 @@
     </div>
 
     <section class="section" id="summary">
-      <div class="callout"><strong>이번 여행의 원칙</strong><p>북부는 꼭 보고, 숙소는 한 번만 옮기고, 남부는 하루에 다녀와요. 어르신과 아이들이 쉬는 시간을 일정 안에 미리 넣었습니다.</p></div>
+      <div class="callout"><strong>이번 여행의 원칙</strong><p>북부는 꼭 보고, 숙소는 한 번만 옮기고, 남부는 하루에 다녀와요. 어르신과 아이들이 쉬는 시간을 일정 안에 미리 넣었습니다.</p><div class="quick-actions"><a href="island.html">🌴 푸꾸옥 알아보기</a><a href="places.html">📍 숙소·먹거리 지도</a></div></div>
     </section>
 
     <section class="section" id="schedule">
       <div class="section-head"><h2>날짜별 일정</h2><p>전체조 + 선택조</p></div>
       <div class="timeline">
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/18 MON · DAY 1</small><h3>도착 & 0.5박</h3></div><div class="day-body"><span class="tag blue">KE485</span><span class="tag">늦은 체크인</span><ul><li>18:15 인천 출발 → 22:15 푸꾸옥 도착</li><li>입국·수하물·픽업 후 공항/롱비치·즈엉동권 숙소로 이동</li><li>도착 당일은 북부까지 가지 않고 바로 취침</li></ul><div class="choice"><b>체크 포인트</b> 24시간 프런트 · 심야 픽업 · 11명 객실 · 조식 시간을 미리 확인해요.</div></div></div></article>
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/19 TUE · DAY 2</small><h3>북부 이동 & 그랜드월드</h3></div><div class="day-body"><span class="tag">북부 숙소 체크인</span><ul><li>늦은 아침 식사 후 16인승 전용차량으로 북부 이동</li><li>체크인·점심·수영장·해변에서 회복</li><li>저녁에는 그랜드월드 산책과 식사</li></ul><div class="choice">어르신·휴식 희망자는 숙소에 남고, 청년·학생은 야간 산책 선택조로 움직여요.</div></div></div></article>
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/20 WED · DAY 3</small><h3>빈펄 사파리</h3></div><div class="day-body"><span class="tag pink">북부 필수</span><ul><li>오전 빈펄 사파리 관람</li><li>점심 후 리조트 복귀, 수영장·낮잠·마사지</li><li>저녁은 리조트 식사 또는 그랜드월드</li></ul><div class="choice">사파리는 보행량이 있으니 어르신은 그늘·화장실·앉을 곳·내부 이동수단부터 확인해요.</div></div></div></article>
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/21 THU · DAY 4</small><h3>빈원더스 또는 북부 휴양</h3></div><div class="day-body"><span class="tag blue">활동조</span><span class="tag">휴식조</span><ul><li>청년·학생: 놀이기구·워터파크·아쿠아리움·공연</li><li>어르신·희망 가족: 리조트 수영장·해변·마사지</li><li>오후 그랜드월드에서 합류 가능</li></ul><div class="choice">빈원더스는 하루 종일 모두 함께 움직이기보다 관심사별 선택조가 편해요.</div></div></div></article>
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/22 FRI · DAY 5</small><h3>중부 숙소 이동 & 야시장</h3></div><div class="day-body"><span class="tag">숙소 이동</span><ul><li>늦은 조식 후 체크아웃, 짐은 전용차량으로 이동</li><li>중부/서부 숙소 체크인 후 롱비치 휴식</li><li>저녁 즈엉동 야시장·딘커우</li></ul><div class="choice">야시장은 혼잡하므로 어르신은 좌석 있는 식당에서 먼저 식사하고 젊은 층만 탐방해요.</div></div></div></article>
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/23 SAT · DAY 6</small><h3>해변·카페·로컬 식사</h3></div><div class="day-body"><span class="tag">회복일</span><ul><li>오전 숙소 수영장·해변</li><li>점심 후 2~3시간 휴식</li><li>늦은 오후 롱비치 일몰 카페</li><li>저녁 해산물 또는 베트남 음식 단체 예약</li></ul></div></div></article>
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/24 SUN · DAY 7</small><h3>남부 당일투어</h3></div><div class="day-body"><span class="tag pink">전용차량</span><ul><li>혼똔섬 케이블카 + 해변 휴양</li><li>호국사 또는 켐비치 중 1곳</li><li>17~18시 중부 복귀</li></ul><div class="choice">세 곳 이상 욕심내지 않아요. 바람·비로 케이블카가 어려우면 중부 휴양일로 바꿔요.</div></div></div></article>
-        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/25 MON · DAY 8</small><h3>마지막 휴식 & 귀국</h3></div><div class="day-body"><span class="tag blue">KE486 23:45</span><ul><li>조식·수영장·해변 또는 자유시간</li><li>쇼핑·카페·선물 구입</li><li>레이트 체크아웃 또는 데이유스 객실 이용</li><li>20시 전후 숙소 출발 → 공항</li></ul></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/18 MON · DAY 1</small><h3>도착 & 0.5박</h3></div><div class="day-body"><span class="tag blue">KE485</span><span class="tag">늦은 체크인</span><ul><li><b>18:15~22:15</b>인천 출발 → 푸꾸옥 도착</li><li><b>22:15~23:45</b>입국심사·수하물 수령·화장실·픽업 준비</li><li><b>23:45~00:30</b>공항/롱비치·즈엉동권 숙소로 이동·체크인</li><li><b>00:30 이후</b>취침 — 도착 당일은 북부까지 가지 않기</li></ul><div class="choice"><b>체크 포인트</b> 24시간 프런트 · 심야 픽업 · 11명 객실 · 조식 시간을 미리 확인해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/19 TUE · DAY 2</small><h3>북부 이동 & 그랜드월드</h3></div><div class="day-body"><span class="tag">북부 숙소 체크인</span><ul><li><b>08:30~09:30</b>기상·조식·짐 정리</li><li><b>10:00~12:00</b>16인승 전용차량으로 북부 이동</li><li><b>12:00~14:00</b>점심·체크인·객실 배정</li><li><b>14:00~16:30</b>수영장·해변·낮잠 회복 시간</li><li><b>17:00~20:30</b>그랜드월드 산책·카페·저녁 식사</li><li><b>20:30~21:30</b>숙소 복귀·휴식</li></ul><div class="choice">어르신·휴식 희망자는 숙소에 남고, 청년·학생은 야간 산책 선택조로 움직여요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/20 WED · DAY 3</small><h3>빈펄 사파리</h3></div><div class="day-body"><span class="tag pink">북부 필수</span><ul><li><b>07:30~08:30</b>기상·조식·관람 준비</li><li><b>09:00~12:30</b>빈펄 사파리 관람</li><li><b>12:30~14:00</b>점심 식사·숙소 이동</li><li><b>14:00~17:30</b>수영장·낮잠·마사지 회복</li><li><b>18:00~20:00</b>리조트 저녁 또는 그랜드월드 식사</li><li><b>20:00 이후</b>숙소 휴식</li></ul><div class="choice">사파리는 보행량이 있으니 어르신은 그늘·화장실·앉을 곳·내부 이동수단부터 확인해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/21 THU · DAY 4</small><h3>빈원더스 또는 북부 휴양</h3></div><div class="day-body"><span class="tag blue">활동조</span><span class="tag">휴식조</span><ul><li><b>07:30~09:00</b>기상·조식·활동조 준비</li><li><b>09:30~16:30</b>청년·학생: 놀이기구·워터파크·아쿠아리움·공연</li><li><b>09:30~16:30</b>어르신·희망 가족: 수영장·해변·마사지·낮잠</li><li><b>16:30~18:00</b>객실 휴식·샤워</li><li><b>18:00~20:00</b>저녁 식사, 희망자는 그랜드월드 합류</li></ul><div class="choice">빈원더스는 하루 종일 모두 함께 움직이기보다 관심사별 선택조가 편해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/22 FRI · DAY 5</small><h3>중부 숙소 이동 & 야시장</h3></div><div class="day-body"><span class="tag">숙소 이동</span><ul><li><b>08:30~10:00</b>늦은 조식·짐 정리·체크아웃</li><li><b>10:00~12:00</b>전용차량으로 중부/서부 숙소 이동</li><li><b>12:00~14:00</b>점심·짐 보관·체크인 준비</li><li><b>14:00~16:30</b>객실 휴식·롱비치 산책</li><li><b>17:30~20:30</b>즈엉동 야시장·딘커우·저녁</li><li><b>20:30~21:30</b>숙소 복귀</li></ul><div class="choice">야시장은 혼잡하므로 어르신은 좌석 있는 식당에서 먼저 식사하고 젊은 층만 탐방해요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/23 SAT · DAY 6</small><h3>해변·카페·로컬 식사</h3></div><div class="day-body"><span class="tag">회복일</span><ul><li><b>08:30~10:30</b>조식·숙소 수영장·해변</li><li><b>10:30~12:00</b>샤워·자유시간</li><li><b>12:00~14:00</b>점심 식사</li><li><b>14:00~16:30</b>객실 낮잠·마사지·휴식</li><li><b>16:30~18:30</b>롱비치 일몰 카페</li><li><b>18:30~20:30</b>해산물 또는 베트남 음식 단체 식사</li></ul></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/24 SUN · DAY 7</small><h3>남부 당일투어</h3></div><div class="day-body"><span class="tag pink">전용차량</span><ul><li><b>07:00~08:00</b>기상·조식·투어 준비</li><li><b>08:00~10:00</b>전용차량으로 남부 이동</li><li><b>10:00~13:00</b>혼똔섬 케이블카·해변 휴양</li><li><b>13:00~14:00</b>점심 식사·휴식</li><li><b>14:00~16:30</b>호국사 또는 켐비치 중 1곳</li><li><b>16:30~18:00</b>중부 숙소 복귀</li><li><b>18:00 이후</b>샤워·저녁·휴식</li></ul><div class="choice">세 곳 이상 욕심내지 않아요. 바람·비로 케이블카가 어려우면 중부 휴양일로 바꿔요.</div></div></div></article>
+        <article class="day"><i class="day-dot"></i><div class="day-card"><div class="day-title"><small>1/25 MON · DAY 8</small><h3>마지막 휴식 & 귀국</h3></div><div class="day-body"><span class="tag blue">KE486 23:45</span><ul><li><b>08:00~10:00</b>조식·수영장·해변 또는 자유시간</li><li><b>10:00~12:00</b>짐 정리·레이트 체크아웃 준비</li><li><b>12:00~15:00</b>점심·쇼핑·카페·선물 구입</li><li><b>15:00~18:30</b>데이유스 객실·샤워·최종 휴식</li><li><b>18:30~20:00</b>마지막 저녁 식사</li><li><b>20:00~21:00</b>공항 이동·수속</li><li><b>23:45</b>KE486 푸꾸옥 출발</li></ul></div></div></article>
       </div>
     </section>
 
