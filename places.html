@@ -10,7 +10,7 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.6}
     .hero{background:linear-gradient(145deg,#071b2f,#087ea4);color:#fff;padding:23px 18px 28px}
-    .wrap{width:min(100%,820px);margin:0 auto}
+    .wrap{width:min(100%,840px);margin:0 auto}
     .back{display:inline-flex;align-items:center;min-height:44px;color:#d8f1f2;text-decoration:none;font-size:14px;font-weight:900}
     .hero h1{font-size:32px;line-height:1.1;letter-spacing:-.06em;margin:20px 0 9px}
     .hero p{margin:0;color:#e2f5f5;font-size:15px}
@@ -50,15 +50,230 @@
   <header class="hero">
     <div class="wrap">
       <a class="back" href="index.html">← 우리 가족 푸꾸옥 여행</a>
-      <h1>숙소·먹거리·관광지 지도</h1>
-      <p>수집·검증된 28개 상세 장소 정보 (위경도·특징·꿀팁·주의사항 포함)</p>
+      <h1>숙소·먹거리·관광지 지도 & 미식 가이드</h1>
+      <p>여행 가이드 리포트 + 디지털 메뉴판 + 35개 검증 장소 포함</p>
     </div>
   </header>
   <main class="wrap main">
+
+    
+    <section class="section" id="digital-menu" style="margin-top:40px; background:linear-gradient(150deg,#0f172a,#1e293b); color:#fff; border-radius:24px; padding:24px 20px; box-shadow:0 12px 30px rgba(0,0,0,0.25);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
+        <div>
+          <span style="background:#10b981; color:#fff; font-size:11px; font-weight:800; padding:3px 9px; border-radius:999px; text-transform:uppercase;">Special Guide</span>
+          <h2 style="color:#fff; margin:6px 0 2px; font-size:24px; letter-spacing:-.04em;">📱 푸꾸옥 현지 디지털 메뉴판 & 발음 가이드</h2>
+          <p style="color:#94a3b8; font-size:13px; margin:0;">베트남어 발음(성조 포함) + 한글 설명 + VND/KRW 환율 기준 이중 표기</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); padding:8px 14px; border-radius:12px; font-size:12px; color:#cbd5e1;">
+          💡 <b>환율 계산 팁</b>: 100,000 VND ≈ 약 5,400원 (0 하나 빼고 54 곱하기)
+        </div>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div style="display:flex; gap:8px; overflow-x:auto; padding-bottom:10px; margin-bottom:16px;">
+        <button onclick="showMenuCat('seafood')" class="menu-tab-btn active" id="tab-seafood">🦞 해산물 & 메인</button>
+        <button onclick="showMenuCat('noodles')" class="menu-tab-btn" id="tab-noodles">🍜 쌀국수 & 면류</button>
+        <button onclick="showMenuCat('local')" class="menu-tab-btn" id="tab-local">🌮 로컬 요리 & 반미</button>
+        <button onclick="showMenuCat('drinks')" class="menu-tab-btn" id="tab-drinks">🥤 음료 & 스무디</button>
+        <button onclick="showMenuCat('phrases')" class="menu-tab-btn" id="tab-phrases">🗣️ 원터치 회화</button>
+      </div>
+
+      <!-- Seafood -->
+      <div id="cat-seafood" class="menu-cat-content" style="display:block;">
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge gold">⭐ 강력추천 · 🍞 반미 필수</span>
+              <h4>Cua Sốt Bơ Tỏi <small>[꾸아 솟 버 또이]</small></h4>
+              <p class="menu-kr">버터갈릭 크랩</p>
+            </div>
+            <p class="menu-desc">고소하고 달콤한 버터 갈릭 소스에 볶아낸 푸꾸옥 칠리 크랩. 소스에 반미 빵을 찍어 먹는 것이 필수입니다.</p>
+            <div class="menu-price">450,000 ~ 650,000 VND <span>(약 24,000 ~ 35,000원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge gold">👑 베스트 미식</span>
+              <h4>Tôm Hùm Nướng Phô Mai <small>[똠 훔 느엉 포 마이]</small></h4>
+              <p class="menu-kr">치즈 랍스터 구이</p>
+            </div>
+            <p class="menu-desc">신선한 푸꾸옥 랍스터에 고소한 모짜렐라 치즈와 마요 소스를 얹어 그릴에 구워낸 럭셔리 구이 요리.</p>
+            <div class="menu-price">750,000 ~ 1,100,000 VND <span>(약 40,000 ~ 60,000원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge green">🔥 초보자 추천 · 🥜 땅콩 주의</span>
+              <h4>Sò Điệp Nướng Mỡ Hành <small>[소 diep 느엉 머 행]</small></h4>
+              <p class="menu-kr">파기름 가리비 구이</p>
+            </div>
+            <p class="menu-desc">가리비 조개 위에 땅콩과 파기름, 간장 소스를 얹어 숯불에 노릇하게 구워낸 대중적인 맛의 조개구이.</p>
+            <div class="menu-price">120,000 ~ 180,000 VND <span>(약 6,500 ~ 9,700원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge green">🥬 밥도둑 1위</span>
+              <h4>Rau Muống Xào Tỏi (Sò Móng Tay) <small>[라우 몽 싸오 또이 (소 몽 타이)]</small></h4>
+              <p class="menu-kr">맛조개 모닝글로리 볶음</p>
+            </div>
+            <p class="menu-desc">마늘향 가득한 공심채(모닝글로리) 볶음에 쫄깃한 맛조개를 더해 한국인 입맛에 가장 잘 맞는 필수 반찬 요리.</p>
+            <div class="menu-price">80,000 ~ 130,000 VND <span>(약 4,300 ~ 7,000원)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noodles -->
+      <div id="cat-noodles" class="menu-cat-content" style="display:none;">
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge gold">🦑 푸꾸옥 1호 특산물</span>
+              <h4>Bún Quậy Phú Quốc <small>[분 꽈이 푸꾸옥]</small></h4>
+              <p class="menu-kr">푸꾸옥 오징어 쌀국수 (분꾸이)</p>
+            </div>
+            <p class="menu-desc">즉석에서 뽑은 생면과 다진 총알오징어, 새우 어묵을 넣은 푸꾸옥 고유 쌀국수. 라임·고추 소스를 직접 제조해 먹습니다.</p>
+            <div class="menu-price">50,000 ~ 75,000 VND <span>(약 2,700 ~ 4,000원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge green">🌿 고수 선택 가능</span>
+              <h4>Phở Bò Nạm Tái <small>[퍼 보 남 따이]</small></h4>
+              <p class="menu-kr">소고기 쌀국수 (차돌/양지)</p>
+            </div>
+            <p class="menu-desc">맑고 깊은 소고기 양지 육수에 신선한 차돌박이와 쌀면이 어우러진 베트남 대표 쌀국수.</p>
+            <div class="menu-price">60,000 ~ 90,000 VND <span>(약 3,200 ~ 4,800원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge green">😋 호불호 없음</span>
+              <h4>Bún Chả Hà Nội <small>[분 짜 하노이]</small></h4>
+              <p class="menu-kr">분짜 (숯불돼지고기 비빔면)</p>
+            </div>
+            <p class="menu-desc">새콤달콤한 느억맘 육수에 숯불 돼지고기와 쌀소면, 신선한 채소를 적셔 먹는 인기 별미 요리.</p>
+            <div class="menu-price">70,000 ~ 100,000 VND <span>(약 3,800 ~ 5,400원)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Local -->
+      <div id="cat-local" class="menu-cat-content" style="display:none;">
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge gold">🥙 겉바속촉 1등</span>
+              <h4>Bánh Xèo <small>[반 쎄오]</small></h4>
+              <p class="menu-kr">반쎄오 (베트남식 크레페)</p>
+            </div>
+            <p class="menu-desc">바삭한 쌀가루 반죽에 숙주, 새우, 돼지고기를 넣어 노릇하게 부친 뒤 라이스페이퍼와 상추에 싸먹는 요리.</p>
+            <div class="menu-price">70,000 ~ 110,000 VND <span>(약 3,800 ~ 6,000원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge green">🍚 든든한 한끼</span>
+              <h4>Cơm Tấm Sườn Nướng <small>[껌 떰 슨 느엉]</small></h4>
+              <p class="menu-kr">껌떰 (돼지갈비 덮밥)</p>
+            </div>
+            <p class="menu-desc">달콤짭조름한 숯불 양념 돼지갈비와 계란후라이를 밥 위에 얹은 베트남식 대중적인 갈비덮밥.</p>
+            <div class="menu-price">55,000 ~ 85,000 VND <span>(약 3,000 ~ 4,600원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge green">🥪 간편 간식</span>
+              <h4>Bánh Mì Kẹp Thịt <small>[반 미 깹 띱]</small></h4>
+              <p class="menu-kr">반미 샌드위치</p>
+            </div>
+            <p class="menu-desc">겉은 바삭하고 속은 부드러운 쌀 바게트에 돼지고기, 오이, 절임 야채를 넣은 대표 간식 샌드위치.</p>
+            <div class="menu-price">30,000 ~ 50,000 VND <span>(약 1,600 ~ 2,700원)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drinks -->
+      <div id="cat-drinks" class="menu-cat-content" style="display:none;">
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge gold">🥥 카페 1위 인기</span>
+              <h4>Cà Phê Cốt Dừa <small>[까 페 꼿 즈어]</small></h4>
+              <p class="menu-kr">코코넛 스무디 커피</p>
+            </div>
+            <p class="menu-desc">진한 베트남 에스프레소에 달콤하고 고소한 코코넛 밀크 스무디를 듬뿍 얹은 대표 시그니처 음료.</p>
+            <div class="menu-price">45,000 ~ 65,000 VND <span>(약 2,400 ~ 3,500원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge green">🥑 달콤고소</span>
+              <h4>Sinh Tố Bơ <small>[신 또 버]</small></h4>
+              <p class="menu-kr">아보카도 스무디</p>
+            </div>
+            <p class="menu-desc">신선한 생 아보카도를 연유, 우유와 함께 부드럽게 갈아 만든 진하고 고소한 스무디 음료.</p>
+            <div class="menu-price">50,000 ~ 70,000 VND <span>(약 2,700 ~ 3,800원)</span></div>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-head">
+              <span class="badge gold">🍷 푸꾸옥 특산주</span>
+              <h4>Rượu Sim Phú Quốc <small>[즈어우 심 푸꾸옥]</small></h4>
+              <p class="menu-kr">푸꾸옥 심 와인 (잔/병)</p>
+            </div>
+            <p class="menu-desc">푸꾸옥 야생 로즈 머틀(Sim) 열매를 발효시켜 만든 달콤쌉싸름한 특산 과실주.</p>
+            <div class="menu-price">40,000 ~ 250,000 VND <span>(약 2,200 ~ 13,500원)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phrases -->
+      <div id="cat-phrases" class="menu-cat-content" style="display:none;">
+        <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:18px;">
+          <h4 style="color:#10b981; margin:0 0 12px; font-size:16px;">🗣️ 현지 식당 원터치 주문 회화 (점원에게 보여주거나 따라 읽기)</h4>
+          <div style="display:grid; gap:10px; font-size:14px;">
+            <div style="background:rgba(0,0,0,0.3); padding:12px 14px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+              <div><b>고수 빼주세요</b><br><span style="color:#94a3b8; font-size:12px;">Không cho rau mùi, cảm ơn</span></div>
+              <span style="color:#10b981; font-weight:800; font-size:15px;">[콩 조 라우 무이, 감 어은]</span>
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:12px 14px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+              <div><b>얼음 넣어주세요</b><br><span style="color:#94a3b8; font-size:12px;">Cho tôi đá</span></div>
+              <span style="color:#10b981; font-weight:800; font-size:15px;">[조 또이 다]</span>
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:12px 14px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+              <div><b>물 좀 주세요</b><br><span style="color:#94a3b8; font-size:12px;">Cho tôi nước lọc</span></div>
+              <span style="color:#10b981; font-weight:800; font-size:15px;">[조 또이 느억 록]</span>
+            </div>
+            <div style="background:rgba(0,0,0,0.3); padding:12px 14px; border-radius:12px; display:flex; justify-content:space-between; align-items:center;">
+              <div><b>계산해 주세요</b><br><span style="color:#94a3b8; font-size:12px;">Tính tiền giúp tôi</span></div>
+              <span style="color:#10b981; font-weight:800; font-size:15px;">[띤 띠엔 줍 또이]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .menu-tab-btn { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#cbd5e1; border-radius:999px; padding:7px 14px; font-size:13px; font-weight:700; white-space:nowrap; cursor:pointer; }
+      .menu-tab-btn.active, .menu-tab-btn:hover { background:#10b981; color:#fff; border-color:#10b981; }
+      .menu-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; }
+      .menu-card { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:16px; display:flex; flex-direction:column; justify-content:space-between; }
+      .menu-card-head h4 { font-size:17px; margin:6px 0 2px; color:#fff; }
+      .menu-card-head h4 small { font-size:13px; color:#10b981; font-weight:700; }
+      .menu-kr { color:#f59e0b; font-size:14px; font-weight:800; margin:0 0 6px; }
+      .menu-desc { font-size:12px; color:#94a3b8; margin:0 0 10px; line-height:1.5; }
+      .menu-price { font-size:13px; font-weight:800; color:#fff; border-top:1px solid rgba(255,255,255,0.08); padding-top:8px; }
+      .menu-price span { color:#94a3b8; font-size:11px; font-weight:400; }
+      .badge { display:inline-block; font-size:10px; font-weight:800; padding:2px 7px; border-radius:6px; margin-bottom:4px; }
+      .badge.gold { background:rgba(245,158,11,0.2); color:#f59e0b; border:1px solid rgba(245,158,11,0.4); }
+      .badge.green { background:rgba(16,185,129,0.2); color:#10b981; border:1px solid rgba(16,185,129,0.4); }
+    </style>
+    <script>
+      function showMenuCat(catId) {
+        document.querySelectorAll('.menu-cat-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.menu-tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('cat-' + catId).style.display = 'block';
+        document.getElementById('tab-' + catId).classList.add('active');
+      }
+    </script>
+    
+
     <section class="section">
-      <h2>북부 · 빈펄·그랜드월드 권역 (7개 장소)</h2>
-      <p>사파리·빈원더스·그랜드월드 및 북부 추천 숙소·맛집</p>
-      <iframe class="map" title="푸꾸옥 북부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.84%2C10.28%2C103.92%2C10.40&amp;layer=mapnik"></iframe>
+      <h2>북부 · 빈펄·그랜드월드 권역 (8개 장소)</h2>
+      <p>사파리·빈원더스·그랜드월드·라크벰(불가사리 마을) 및 추천 숙소</p>
+      <iframe class="map" title="푸꾸옥 북부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.84%2C10.28%2C103.94%2C10.40&amp;layer=mapnik"></iframe>
       <p class="map-note">지도는 위치 확인용입니다. 각 장소 카드의 [Google 지도에서 보기 ↗]를 눌러 정확한 경로를 검색해보세요.</p>
       <div class="cards">
         
@@ -135,6 +350,24 @@
             </div>
             
             <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 북부 해안 수상 마을</span>
+                  <h3>라크벰 불가사리 마을 (Rach Vem - Starfish Village)</h3>
+                </div>
+                <p class="desc">글로벌 여행자들이 극찬하는 북부의 수상 마을. 잔잔하고 얕은 바다 속에서 붉은 불가사리들을 관찰할 수 있는 숨은 천연 비치 스팟입니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>붉은 불가사리 관찰</b>: 맑고 얕은 에메랄드 바다 속 천연 불가사리 관찰 및 스냅사진 명소</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 무료 (수상식당 이용 시 별도)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 우기보다는 건기(10월~4월)에 물이 매우 맑고 불가사리가 많이 관찰됩니다.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 불가사리를 물 밖으로 오랫동안 꺼내두면 죽을 수 있으니 눈으로 감상해 주세요.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=라크벰 불가사리 마을+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
               <div class="card-img-wrap"><img src="https://kkangyu-blog.com/wp-content/uploads/2024/04/%EC%98%A4%EC%A7%95%EC%96%B41-optimized.jpg" alt="분꾸이 끼엔써이 (Bún Quậy Kiến Xây)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">블로그 - 깡유의 블로그(kkangyu-blog.com)</span></div>
               <div class="card-body">
                 <div class="card-header">
@@ -192,8 +425,8 @@
     </section>
 
     <section class="section">
-      <h2>중부 · 즈엉동·소나시·롱비치 권역 (14개 장소)</h2>
-      <p>시내 생활권, 야시장, 맛집, 마트 및 중심 숙소</p>
+      <h2>중부 · 즈엉동·소나시·롱비치 권역 (21개 장소)</h2>
+      <p>시내 생활권, 야시장, 킹콩마트, 맛집, 박물관 & 시내 숙소</p>
       <iframe class="map" title="푸꾸옥 중부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.94%2C10.12%2C104.02%2C10.25&amp;layer=mapnik"></iframe>
       <div class="cards">
         
@@ -270,6 +503,42 @@
             </div>
             
             <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 중북부 온더락 해변</span>
+                  <h3>망고베이 리조트 (Mango Bay Resort)</h3>
+                </div>
+                <p class="desc">글로벌 생태 여행객(Eco-traveler)에게 선호되는 친환경 프라이빗 리조트. 에어컨 대신 자연풍과 몰입형 우드 방갈로를 갖추고 있으며 클리프사이드 온더락(On the Rocks) 일몰 레스토랑이 유명합니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>친환경 우드 방갈로</b>: 자연 친화적 건축과 정원</li><li><b>온더락 레스토랑</b>: 바위 절벽 위 최고의 파노라마 석양 레스토랑</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 15만 ~ 25만원대</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 숙박을 하지 않더라도 온더락 레스토랑 일몰 저녁 식사를 위해 찾는 관광객이 많습니다.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=망고베이 리조트+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 즈엉동 시내 언덕</span>
+                  <h3>라하나 리조트 (Lahana Resort &amp; Spa)</h3>
+                </div>
+                <p class="desc">즈엉동 시내 언덕에 위치한 에코 프렌들리 리조트로, 숲속에 둘러싸인 듯한 조용한 휴식과 인피니티 풀, 뛰어난 시내 접근성을 동시에 제공합니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>숲속 인피니티 풀</b>: 자연 속 오션뷰 야외 수영장</li><li><b>시내 접근성</b>: </li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 8만 ~ 15만원대</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 가성비와 휴양지 감성을 모두 잡은 중부 즈엉동 인기 리조트입니다.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=라하나 리조트+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
               <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Ch%C3%B9a_H%E1%BB%99_Qu%E1%BB%91c_%E1%BB%9F_%C4%91%E1%BA%A3o_Ph%C3%BA_Qu%E1%BB%91c%2C_s%E1%BB%91ng_%E1%BA%A3o_tung_ch%E1%BA%A3o%2C_th%C3%A1ng_3_n%C4%83m_2021_%282%29.jpg/500px-Ch%C3%B9a_H%E1%BB%99_Qu%E1%BB%91c_%E1%BB%9F_%C4%91%E1%BA%A3o_Ph%C3%BA_Qu%E1%BB%91c%2C_s%E1%BB%91ng_%E1%BA%A3o_tung_ch%E1%BA%A3o%2C_th%C3%A1ng_3_n%C4%83m_2021_%282%29.jpg" alt="호국사(Ho Quoc Pagoda)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, Phương Huy</span></div>
               <div class="card-body">
                 <div class="card-header">
@@ -337,6 +606,42 @@
                 
                 <div class="card-action">
                   <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=즈엉동 야시장+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 즈엉동 시내 인근 언덕</span>
+                  <h3>꼬이응우온 박물관 (Cội Nguồn Museum)</h3>
+                </div>
+                <p class="desc">푸꾸옥의 역사, 고고학 유물, 민속 문화를 한눈에 파악할 수 있는 섬 내 대표 6층 규모 박물관이자 즈엉동 바다를 조망할 수 있는 전망대 스팟입니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>푸꾸옥 섬 역사 유물</b>: 민속 해양 문화 및 섬 역사 전시</li><li><b>옥상 전망대</b>: 즈엉동 시내 및 바다 전경 조망</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 입장료 약 20,000 VND</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 역사에 관심이 많은 학생이나 어르신과 함께 방문하기 좋습니다.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=꼬이응우온 박물관+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 중부 내륙</span>
+                  <h3>푸꾸옥 후추 농장 &amp; 심 와인 공장 (Pepper Farm &amp; Sim Wine)</h3>
+                </div>
+                <p class="desc">세계적으로 인정받는 푸꾸옥 후추 재배 과정 체험과 로즈 머틀 열매로 만드는 특산 과실주 &#x27;심 와인&#x27; 시음 및 기념품 구매 코스입니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>통후추/시즈닝 구매</b>: 선물용 최고급 푸꾸옥 통후추 구매</li><li><b>심 와인 시음</b>: 달콤쌉싸름한 로즈 머틀 발효주 시음</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 입장료 무료 (구매 비용 별도)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 킹콩마트보다 후추 농장 직영점에서 더 신선하고 다양한 시즈닝 후추를 구할 수 있습니다.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=푸꾸옥 후추 농장 &amp;amp; 심 와인 공장+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
                 </div>
               </div>
             </div>
@@ -449,12 +754,66 @@
               </div>
             </div>
             
+            <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 즈엉동 여행자 거리</span>
+                  <h3>크랩 하우스 (Crab House)</h3>
+                </div>
+                <p class="desc">글로벌 관광객들에게 인기가 높은 유명 미식 스팟. 특제 버터 갈릭 스파이시 소스를 곁들인 크랩 및 종합 해산물/갑각류 플래터 전문점입니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>특제 버터갈릭 소스</b>: 옥수수, 소시지, 빵과 함께 찍어 먹는 중독성 있는 소스</li><li><b>해산물 콤보 플래터</b>: 게, 새우, 오징어 등을 한 번에 즐기는 대형 플래터</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1인당 약 500,000 ~ 900,000 VND (약 2.7만~5만원)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 저녁 피크타임에는 대기가 길어질 수 있으므로 구글 맵이나 전화로 사전 예약을 권장합니다.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 가격대가 일반 로컬 식당보다 높은 편입니다.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=크랩 하우스+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 즈엉동 해변가</span>
+                  <h3>신짜오 씨푸드 (Xin Chào Restaurant)</h3>
+                </div>
+                <p class="desc">즈엉동 석양을 조망하며 치즈 랍스터, 맛조개 모닝글로리 구이, 가리비 구이를 쾌적하게 즐길 수 있는 대표 해변 오션뷰 해산물 레스토랑입니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>오션뷰 석양 테라스</b>: 일몰 시간에 맞춰 바다 바로 앞 좌석 예약 추천</li><li><b>치즈 랍스터 &amp; 모닝글로리</b>: 한국인 입맛에 딱 맞춘 해산물 요리</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1인당 약 400,000 ~ 800,000 VND</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 11명 단체 방문 시 2층 해변 창가 대형 테이블을 미리 예약해두면 최고의 일몰 식사를 즐길 수 있습니다.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=신짜오 씨푸드+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 즈엉동 언덕 위</span>
+                  <h3>춘춘 비스트로 &amp; 바 (Chuồn Chuồn Bistro)</h3>
+                </div>
+                <p class="desc">즈엉동 언덕 위에서 푸꾸옥 시내와 바다 전경을 한눈에 내려다보며 브런치, 커피, 칵테일을 즐길 수 있는 뷰 맛집 힐탑 카페입니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>파노라마 오션뷰</b>: 푸꾸옥 시내와 탁 트인 바다 뷰</li><li><b>시그니처 커피 &amp; 칵테일</b>: 코코넛 스무디 커피 및 칵테일</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 음료 약 60,000 ~ 120,000 VND</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 언덕 경사가 가파르므로 택시나 전용차량으로 카페 입구까지 이동하는 것을 추천합니다.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=춘춘 비스트로 &amp;amp; 바+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
       </div>
     </section>
 
     <section class="section">
-      <h2>남부 · 안터이·케이블카·켐비치 권역 (7개 장소)</h2>
-      <p>혼똠섬, 호국사, 사오비치, 남부 고급 리조트</p>
+      <h2>남부 · 안터이·케이블카·선셋타운 권역 (7개 장소)</h2>
+      <p>혼똠섬, 호국사, 사오비치, 남부 럭셔리 리조트</p>
       <iframe class="map" title="푸꾸옥 남부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.96%2C9.98%2C104.08%2C10.12&amp;layer=mapnik"></iframe>
       <div class="cards">
         
@@ -593,7 +952,7 @@
     </div>
 
     <p class="footer">
-      수집·감수 완료 데이터 28개 장소 기준 (2026.08 업데이트)<br>
+      통합 가이드 리포트 + 디지털 메뉴판 + 35개 장소 반영 (2026.08 업데이트)<br>
       실제 방문 전 Google Maps 및 공식 채널을 다시 확인해 주세요.
     </p>
   </main>
