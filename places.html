@@ -1,9 +1,607 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071b2f"><title>숙소·먹거리 지도</title>
-<style>
-:root{--ink:#10243a;--muted:#667985;--paper:#f5f8fa;--card:#fff;--ocean:#087ea4;--line:#e2ebef;--coral:#ff826d}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.6}.hero{background:linear-gradient(145deg,#071b2f,#087ea4);color:#fff;padding:23px 18px 28px}.wrap{width:min(100%,760px);margin:0 auto}.back{display:inline-flex;align-items:center;min-height:44px;color:#d8f1f2;text-decoration:none;font-size:14px;font-weight:900}.hero h1{font-size:33px;line-height:1.1;letter-spacing:-.06em;margin:25px 0 9px}.hero p{margin:0;color:#e2f5f5;font-size:15px}.main{padding:20px 16px 100px}.section{margin:25px 0}.section h2{font-size:22px;letter-spacing:-.045em;margin:0 0 10px}.section>p{color:#5b707b;font-size:13px;margin:0 0 10px}.map{background:#e8f0ee;border:0;border-radius:18px;width:100%;height:230px;display:block}.map-note{font-size:12px;color:#657b85;margin:6px 2px 0}.cards{display:grid;gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px}.card h3{font-size:18px;margin:0 0 4px;letter-spacing:-.035em}.card p{font-size:14px;color:#5b707b;margin:0 0 10px}.pill{display:inline-block;font-size:12px;color:#0a6b83;background:#e4f5f7;border-radius:999px;padding:5px 9px;margin-bottom:8px;font-weight:900}.maplink{display:inline-flex;align-items:center;min-height:44px;background:var(--ocean);color:#fff;border-radius:10px;padding:8px 13px;text-decoration:none;font-size:13px;font-weight:900}.warn{border-left:3px solid var(--coral);background:#fff5f2;padding:13px;font-size:13px;color:#74554f;border-radius:0 13px 13px 0}.subnav{position:fixed;z-index:10;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:3px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line)}.subnav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:#526b78;text-decoration:none;border-radius:12px;padding:4px 12px;font-size:12px;font-weight:900}.subnav a.active{color:var(--ocean);background:#e9f7fa}.footer{text-align:center;color:#687e89;font-size:12px;margin-top:30px}@media(max-width:380px){.hero h1{font-size:30px}.subnav a{padding-left:8px;padding-right:8px}}
-</style></head><body><header class="hero"><div class="wrap"><a class="back" href="index.html">← 우리 가족 푸꾸옥 여행</a><h1>숙소·먹거리 지도</h1><p>실제 위치를 지도에서 확인하고, 11명 예약 가능 여부를 다시 문의해요.</p></div></header><main class="wrap main">
-<section class="section"><h2>북부 · 빈펄권</h2><p>사파리·빈원더스·그랜드월드 관광 거점</p><iframe class="map" title="푸꾸옥 북부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.84%2C10.20%2C104.12%2C10.43&amp;layer=mapnik"></iframe><p class="map-note">지도는 지역 위치 확인용입니다. 장소명 버튼을 누르면 최신 Google 지도 검색으로 이동해요.</p><div class="cards"><div class="card"><span class="pill">북부 숙소 후보</span><h3>빈홀리데이 피에스타</h3><p>수영장·키즈존·헬스장·셔틀. 북부 관광 접근성과 가성비의 균형 후보.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Vinholidays+Fiesta+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div><div class="card"><span class="pill">북부 숙소 후보</span><h3>빈펄 원더월드</h3><p>풀빌라형 객실과 사파리·빈원더스 접근성. 실제 침실·욕실 수를 문의.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Vinpearl+Wonderworld+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div><div class="card"><span class="pill">관광·카페</span><h3>그랜드월드</h3><p>운하·야간 산책·식사·카페를 한 번에 묶기 좋은 장소.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Grand+World+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div></div></section>
-<section class="section"><h2>중부 · 즈엉동·롱비치</h2><p>숙소 이동 후 식사·마트·카페를 해결할 거점</p><iframe class="map" title="푸꾸옥 중부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.86%2C10.05%2C104.08%2C10.28&amp;layer=mapnik"></iframe><div class="cards"><div class="card"><span class="pill">중부 숙소 1순위</span><h3>씨쉘스 푸꾸옥</h3><p>야시장 접근·해변·수영장·스파·레스토랑. 마지막 날 레이트 체크아웃 문의.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Seashells+Phu+Quoc+Hotel+and+Spa" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div><div class="card"><span class="pill">중부 숙소 대안</span><h3>두짓 프린세스 문라이즈</h3><p>해변·인피니티풀·키즈클럽·레스토랑. 리조트 휴식에 적합.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Dusit+Princess+Moonrise+Beach+Resort+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div><div class="card"><span class="pill">로컬 맛집 후보</span><h3>Ra Khoi Seafood · Pho Hong Anh · 마담 타오</h3><p>해산물·쌀국수·분짜 후보. 11명 단체석과 최신 영업 여부를 먼저 확인.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Ra+Khoi+Seafood+Phu+Quoc" target="_blank" rel="noopener">Ra Khoi 지도 검색 ↗</a></div><div class="card"><span class="pill">시장·카페</span><h3>즈엉동 야시장 · 딘커우 · 롱비치</h3><p>야시장 먹거리, 사원, 일몰 카페를 묶기 좋은 중부 생활권.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Duong+Dong+Night+Market+Phu+Quoc" target="_blank" rel="noopener">야시장 지도 검색 ↗</a></div></div></section>
-<section class="section"><h2>남부 · 안터이권</h2><p>중부 숙소에서 전용차량 당일투어로 방문</p><iframe class="map" title="푸꾸옥 남부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.88%2C9.80%2C104.16%2C10.12&amp;layer=mapnik"></iframe><div class="cards"><div class="card"><span class="pill">남부 관광</span><h3>혼똔섬 케이블카 · 선셋타운</h3><p>날씨·바람에 따라 운행 여부가 달라질 수 있으니 전날 확인.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hon+Thom+Cable+Car+Station+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div><div class="card"><span class="pill">남부 선택</span><h3>호국사 · 켐비치</h3><p>남부 당일투어에서 둘 중 한 곳만 선택하면 체력 부담을 줄일 수 있어요.</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Sao+Beach+Phu+Quoc" target="_blank" rel="noopener">켐비치 지도 검색 ↗</a></div></div></section>
-<div class="warn"><b>예약 전 확인</b><br>지도 검색 결과와 실제 영업 위치·운영시간이 달라질 수 있습니다. 숙소는 11명 객실 구성·침대 수·같은 층 배정·대형 차량 진입을, 식당은 단체석·가격·서비스료를 직접 확인해요.</div><p class="footer">지도는 OpenStreetMap 지역 지도와 Google Maps 검색 링크를 사용합니다.<br>실제 예약 전 최신 위치와 영업 여부를 다시 확인해요.</p></main><nav class="subnav" aria-label="페이지 이동"><a href="index.html">일정</a><a href="island.html">정보</a><a class="active" href="places.html">숙소·지도</a></nav></body></html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071b2f">
+  <title>숙소·먹거리·관광지 지도 & 상세 정보</title>
+  <style>
+    :root{--ink:#10243a;--muted:#667985;--paper:#f5f8fa;--card:#fff;--ocean:#087ea4;--line:#e2ebef;--coral:#ff826d;--sun:#ffc857}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.6}
+    .hero{background:linear-gradient(145deg,#071b2f,#087ea4);color:#fff;padding:23px 18px 28px}
+    .wrap{width:min(100%,820px);margin:0 auto}
+    .back{display:inline-flex;align-items:center;min-height:44px;color:#d8f1f2;text-decoration:none;font-size:14px;font-weight:900}
+    .hero h1{font-size:32px;line-height:1.1;letter-spacing:-.06em;margin:20px 0 9px}
+    .hero p{margin:0;color:#e2f5f5;font-size:15px}
+    .main{padding:20px 16px 100px}
+    .section{margin:30px 0}
+    .section h2{font-size:24px;letter-spacing:-.045em;margin:0 0 6px;color:var(--ink)}
+    .section>p{color:#5b707b;font-size:14px;margin:0 0 14px}
+    .map{background:#e8f0ee;border:0;border-radius:18px;width:100%;height:250px;display:block;margin-bottom:8px}
+    .map-note{font-size:12px;color:#657b85;margin:0 0 16px}
+    .cards{display:grid;gap:18px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 6px 20px rgba(9,39,64,.04);display:flex;flex-direction:column}
+    .card-img-wrap{position:relative;width:100%;height:200px;background:#e9f2f5;overflow:hidden}
+    .card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+    .img-credit{position:absolute;bottom:6px;right:8px;background:rgba(0,0,0,.65);color:#fff;font-size:10px;padding:2px 7px;border-radius:6px;backdrop-filter:blur(4px)}
+    .card-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .card-header h3{font-size:20px;margin:4px 0 0;letter-spacing:-.035em;color:var(--ink)}
+    .pill{display:inline-block;font-size:12px;color:#0a6b83;background:#e4f5f7;border-radius:999px;padding:4px 10px;font-weight:800}
+    .desc{font-size:14px;color:#4a5c66;margin:0;line-height:1.6}
+    .highlights{background:#f7fafc;border-radius:12px;padding:12px 14px;font-size:13px}
+    .highlights strong{display:block;color:var(--ocean);margin-bottom:6px;font-size:12px}
+    .highlights ul{margin:0;padding-left:18px;color:#3a4d57}
+    .highlights li{margin-bottom:3px}
+    .meta-group{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:#556873}
+    .meta-item{background:#f0f4f7;padding:4px 9px;border-radius:8px}
+    .insider-tip{background:#f0f9ff;border-left:3px solid var(--ocean);padding:10px 12px;border-radius:0 10px 10px 0;font-size:13px;color:#1e4b5e}
+    .caution-note{background:#fff5f2;border-left:3px solid var(--coral);padding:10px 12px;border-radius:0 10px 10px 0;font-size:13px;color:#744b43}
+    .card-action{margin-top:auto;padding-top:6px}
+    .maplink{display:inline-flex;align-items:center;justify-content:center;min-height:42px;width:100%;background:var(--ocean);color:#fff;border-radius:12px;text-decoration:none;font-size:13px;font-weight:800}
+    .warn{border-left:3px solid var(--coral);background:#fff5f2;padding:15px;font-size:13px;color:#74554f;border-radius:0 14px 14px 0;margin-top:30px}
+    .subnav{position:fixed;z-index:10;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:3px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+    .subnav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:#526b78;text-decoration:none;border-radius:12px;padding:4px 14px;font-size:13px;font-weight:900}
+    .subnav a.active{color:var(--ocean);background:#e9f7fa}
+    .footer{text-align:center;color:#687e89;font-size:12px;margin-top:35px}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <a class="back" href="index.html">← 우리 가족 푸꾸옥 여행</a>
+      <h1>숙소·먹거리·관광지 지도</h1>
+      <p>수집·검증된 28개 상세 장소 정보 (위경도·특징·꿀팁·주의사항 포함)</p>
+    </div>
+  </header>
+  <main class="wrap main">
+    <section class="section">
+      <h2>북부 · 빈펄·그랜드월드 권역 (7개 장소)</h2>
+      <p>사파리·빈원더스·그랜드월드 및 북부 추천 숙소·맛집</p>
+      <iframe class="map" title="푸꾸옥 북부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.84%2C10.28%2C103.92%2C10.40&amp;layer=mapnik"></iframe>
+      <p class="map-note">지도는 위치 확인용입니다. 각 장소 카드의 [Google 지도에서 보기 ↗]를 눌러 정확한 경로를 검색해보세요.</p>
+      <div class="cards">
+        
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://cdn.myguestdiary.com/uploads/2247/__page__1.jpg?width=1920&amp;height=1080&amp;mode=crop" alt="윈덤 가든 그랜드월드 푸꾸옥 (Wyndham Garden Grandworld Phu Quoc)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">공식 사이트 (Wyndham Garden Grandworld Phu Quoc)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 푸꾸옥 북부, 그랜드월드 도보 10분 이내</span>
+                  <h3>윈덤 가든 그랜드월드 푸꾸옥 (Wyndham Garden Grandworld Phu Quoc)</h3>
+                </div>
+                <p class="desc">그랜드월드 바로 앞에 위치한 가성비형 풀빌라·리조트로, 개인블로그와 유튜브 브이로그 두 곳에서 키즈 시설이 강점으로 반복 언급된다. 1층에 그림그리기·볼풀·미끄럼틀 등을 갖춘 키즈클럽과 별도의 야외 미니 놀이터(그네·미끄럼틀·시소)가 있어 5세 아이를 동반한 가족 후기에서 좋은 평가를 받았다. 유튜버 후기에서는 미끄럼틀이 있는 대형 수영장(수심 1.2m)과 유아용 풀이 별도로 있다고 확인된다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>키즈클럽</b>: 1층, 수영장·조식장 인근. 그림그리기·볼풀·미끄럼틀 무료 이용, 오전/오후 유료 액티비티 프로그램 별도 운영</li><li><b>야외 미니 놀이터</b>: 그네·미끄럼틀·시소 등 소규모 놀이시설</li><li><b>수영장</b>: 미끄럼틀 있는 메인풀(수심 1.2m, 오후 3시 오픈)과 유아풀 별도</li><li><b>식사 패키지</b>: 조식/점심/저녁/스낵타임 별도 운영, 음료 포함 패키지 시 맥주 포함</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 7만~13만원대 (스탠다드~스피리어 킹룸 기준; OTA 최저가 USD 50~65 수준과 유튜브 실투숙 후기 상호 확인, 다른 대형 리조트 대비 가성비 높음)</span><span class="meta-item">⏰ 체크인 14:00 / 체크아웃 12:00 (유튜브 실투숙 후기 + Wyndham 공식 사이트·OTA 기준 교차 확인)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 그랜드월드 코앞이라 도보 10분 내 이동 가능해 점심·저녁 시간에 자유롭게 오갈 수 있음(입장료 없음). 예약시 객실 제곱미터(㎡) 확인을 추천한다는 유튜버 팁 있음.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> ① 수용 인원이 많아 조식당이 붐비고 선베드 자리 확보가 어렵다는 후기 있음. ② 별도 82cook 여행 커뮤니티 글에서는, 대가족(11명 등)의 경우 큰 풀빌라 1채보다 그랜드월드 내 개별 호텔에서 가족 단위로 방을 나눠 예약하는 것이 고령자 이동 편의상 낫다는 의견이 있었음(엘리베이터·동선 세부 정보는 확인 안 됨).</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=윈덤 가든 그랜드월드 푸꾸옥+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://image.flydesk.co.kr/goods_new/18102/main.jpg" alt="멜리아 빈펄 푸꾸옥 (Melia Vinpearl Phu Quoc)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">엔조이 빈펄 (Vin Group 공식 예약 포털)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 그랜드월드/빈펄 단지 내, 넓은 해변 조망</span>
+                  <h3>멜리아 빈펄 푸꾸옥 (Melia Vinpearl Phu Quoc)</h3>
+                </div>
+                <p class="desc">그랜드월드 단지 내 대형 리조트로, 최대 3베드룸 이상 프라이빗 풀 포함 빌라를 갖췄다. 스테이폴리오는 수영장·키즈클럽·다양한 레스토랑을 갖춘 가족형 대형 리조트로 소개했고, 82cook 여행 커뮤니티 실사용 후기에서는 세 가족이 방 3개 이상에 개인 수영장이 딸린 빌라 한 채를 함께 이용했다는 구체적 경험담이 확인된다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>3베드룸+ 풀빌라</b>: 방 3개 이상, 개인 수영장 포함 — 세 가족이 함께 이용한 실사용 후기(82cook)</li><li><b>부대시설</b>: 수영장, 키즈클럽, 다양한 레스토랑, 라이브뮤직</li><li><b>인접 시설</b>: 골프장 인접(아빠들 라운딩 가능), 동물원+워터파크+놀이동산 소규모 시설 인접</li><li><b>위치</b>: 넓은 해변과 초록빛 조경을 갖춘 대형 리조트 단지</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 22만~24만원대 (OTA 최저가 기준; 별도 1박당 VND 300만원(약 16만원 상당) 보증금 부과)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (OTA 기준)</span></div>
+                
+                <div class="caution-note">⚠️ <b>주의:</b> 82cook 실사용 후기(3가족 동행)에 따르면, 대형 3베드룸+ 빌라는 이동시마다 리조트에 버기카를 호출해야 하는 번거로움이 있고, 빌라 규모가 커서 고령자에게는 동선이 부담될 수 있다는 지적이 있었음. 11명 같은 대가족이라면 방 배정/이동 동선을 미리 확인할 필요.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=멜리아 빈펄 푸꾸옥+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/VinWonders_Phu_Quoc_from_ferris_wheel.jpg/500px-VinWonders_Phu_Quoc_from_ferris_wheel.jpg" alt="빈원더스 푸꾸옥(VinWonders Phu Quoc)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, lol1VNIO</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 북부 바이자이(Bai Dai)</span>
+                  <h3>빈원더스 푸꾸옥(VinWonders Phu Quoc)</h3>
+                </div>
+                <p class="desc">푸꾸옥 북부에 있는 대형 복합 테마파크로, 타이푼월드 워터파크·어드벤처월드 놀이공원·대형 아쿠아리움 세 구역으로 구성됩니다. 즈엉동 시내에서 차로 40~50분 거리라 접근성은 다소 떨어지지만, 빈 버스(공항↔그랜드월드 T2, 5만동)와 무료 셔틀버스를 연계하면 택시비 부담 없이 이동할 수 있습니다. 아쿠아리움은 해저터널을 지나며 상어·가오리·열대어를 가까이서 볼 수 있어 아이들 교육 효과도 좋고, 실내 냉방 시설이라 더위를 피하기에도 좋습니다. 놀이기구는 대기줄이 짧은 편이라 효율적으로 여러 개를 탈 수 있습니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>아쿠아리움 해저터널</b>: 상어·가오리·열대어 관람, 인어쇼는 오후 2시 1회</li><li><b>타이푼월드 워터파크</b>: 파도풀, 유수풀, 슬라이드, 키즈풀 다수. 혼똠섬 워터파크보다 슬라이드 종류가 더 다양하다는 후기</li><li><b>어드벤처월드 놀이공원</b>: 회전목마·바이킹·미니롤러코스터 등 약 10여 개 놀이기구, 대기 없이 이용 가능</li><li><b>(연계) 빈펄 사파리</b>: 기린 먹이주기 체험(약 7만동) 등, 후기에 함께 언급되나 별도 구역/티켓 여부는 확인 안 됨</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 성인 950,000 VND, 아동·경로우대 710,000 VND, 신장 100cm 미만 무료 (2026년 기준, VinWonders 공식 홈페이지·KKday 블로그 확인). 워터파크 내 락커 대여 10만동(보증금 5만동), 수건대여 5만동(보증금 15만동)</span><span class="meta-item">⏰ 전체 단지 09:00~19:30 매일 운영. 구역별 세부 운영시간은 상이 — 유러피언 스트리트 09:00~19:30, 판타지월드 09:00~18:00, 어드벤처월드 10:00~18:00, 타이푼월드(워터파크) 09:00~17:30, 씨쉘(아쿠아리움) 10:00~18:00 (VinWonders 공식 안내). 아쿠아리움 인어쇼는 기존 정보대로 오후 2시 1회 운영으로 추정되나 이번 재검색에서 별도 확인은 안 됨(기존 값 유지).</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 빈 버스 17번(공항↔그랜드월드 T2, 5만동, 배차 15~30분)을 타고 T2에서 무료 셔틀(V2.1/V2.2/V3.1/V3.2)로 환승. 배차가 뜸하면 버기카(흥정 시 약 8만동, 5분 소요)도 대안. 동선은 아쿠아리움→놀이공원→워터파크 순 추천 후기 다수. 아쿠아리움은 매우 시원하니 아이용 얇은 긴팔을 챙기면 좋음.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 이동 거리가 멀어 대가족 동선에 하루를 통째로 배정해야 함. 그늘 없는 야외 구간이 많아 더위 대비(양산·물)가 필수라는 후기.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=빈원더스 푸꾸옥+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg/500px-2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg" alt="푸꾸옥 그랜드월드(Grand World)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, 松岡明芳(Matsuoka Akiyoshi)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 북부, 빈원더스 인근</span>
+                  <h3>푸꾸옥 그랜드월드(Grand World)</h3>
+                </div>
+                <p class="desc">&#x27;잠들지 않는 도시&#x27;로 소개되는 대형 엔터테인먼트·쇼핑·문화 복합공간으로, 베네치아풍 운하를 따라 곤돌라 보트를 탈 수 있고 밤이 되면 화려한 조명이 켜집니다. 하루에 여러 차례 미니쇼와 대형 쇼가 열려 저녁 시간대 방문에 특히 적합합니다. 무료 입장이 기본이라 부담 없이 들를 수 있는 야간 산책 코스로 꼽힙니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>분수·레이저 쇼</b>: 밤 9시 30분경 시작, 시계탑에서 레이저 연출(단일출처, 미확인 유지)</li><li><b>베네치아풍 운하 &amp; 곤돌라 보트</b>: 물줄기를 따라 도는 보트 체험</li><li><b>미니쇼·빅쇼</b>: 하루 13회 미니쇼 + 1회 빅쇼가 열린다는 후기(구체 스케줄은 단일 출처)</li><li><b>그랜드월드 나이트마켓</b>: 134개 점포, 저녁 7~11시 최고조 (Vinpearl 공식)</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 전체 부지 무료 개방, 일부 체험·쇼만 유료</span><span class="meta-item">⏰ 단지 전체는 사실상 24시간 개방되며 매장·레스토랑·나이트마켓·쇼는 개별 운영시간을 따름. 나이트마켓(야시장, 134개 점포)은 저녁 7시~11시가 가장 붐빔(Vinpearl 공식). 분수·레이저 쇼는 밤 9시 30분경 시작한다는 정보는 이번 재검색에서 별도 확인 안 됨 — 기존 단일출처 값 유지.</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 저녁 조명이 켜진 이후 방문이 낮보다 훨씬 볼거리가 많다는 후기. 후식으로 ANN카페 망고빙수 추천.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=푸꾸옥 그랜드월드+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://kkangyu-blog.com/wp-content/uploads/2024/04/%EC%98%A4%EC%A7%95%EC%96%B41-optimized.jpg" alt="분꾸이 끼엔써이 (Bún Quậy Kiến Xây)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">블로그 - 깡유의 블로그(kkangyu-blog.com)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 그랜드월드(북부) 등 여러 지점 운영, 프랜차이즈화된 체인</span>
+                  <h3>분꾸이 끼엔써이 (Bún Quậy Kiến Xây)</h3>
+                </div>
+                <p class="desc">총알오징어(작은 오징어)를 넣고 즉석에서 뽑은 통통한 면을 맑은 국물에 말아주는 푸꾸옥 특산 쌀국수 &#x27;분꾸이&#x27;의 대표 브랜드다. 여러 유튜버와 블로거가 공통으로 언급할 만큼 푸꾸옥 여행에서 오징어쌀국수를 처음 접하기 좋은 곳으로 꼽힌다. 프랜차이즈화가 잘 되어 있어 지점마다 위생과 서비스가 준수하다는 평이 많다. 오징어가 다른 부위보다 훨씬 부드럽다는 후기가 반복적으로 나온다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>분꾸이(오징어쌀국수)</b>: 총알오징어 5덩어리 정도 토핑, 맑고 뽀얀 국물, 원하는 토핑 사이드 추가 가능</li><li><b>매콤 소스 조합</b>: 제공되는 소스들을 섞어 찍어먹으면 맛이 좋다는 후기</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 그랜드월드 지점 기준 35,000~65,000동(rootytrip.com), 그 외 로컬 지점은 4만~7만동, 깔끔한 지점은 7만~9만동 선(리서치 소스 종합)</span><span class="meta-item">⏰ 오전 7:00~오후 10:00, 일부 요일은 밤 11:45까지 연장(그랜드월드 지점 기준, rootytrip.com·foody.vn 등 복수 독립 출처 일치). 초안에 있던 &#x27;오후 3:15~9:30&#x27; 정보는 재검색 결과 뒷받침되지 않아 정정함</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 여러 지점 중 상대적으로 쾌적하고 깨끗한 지점(2호점 등)을 추천하는 후기가 있음. 처음 방문 시 다양한 사이드 메뉴도 함께 시켜보길 권함.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=분꾸이 끼엔써이+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://cdn.placejoys.com/18650-oy-photo-1.jpg" alt="마담타오 (Madam Thảo)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">placejoys.com 매장 소개 페이지</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 그랜드월드(북부)</span>
+                  <h3>마담타오 (Madam Thảo)</h3>
+                </div>
+                <p class="desc">그랜드월드 내 한국인 입맛에 맞춰진 현지식당으로 소개된 곳이다. 뚝배기 쌀국수와 분짜, 해산물볶음밥 등 메뉴 구성이 다양해 여러 취향을 한 자리에서 만족시킬 수 있다는 평이 있다. 이른 아침부터 영업해 조식으로도 활용 가능하다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>뚝배기 쌀국수</b>: 시그니처 메뉴로 소개됨(가격 확인 안 됨)</li><li><b>분짜 · 해산물볶음밥 · 오징어튀김</b>: 함께 자주 언급되는 사이드 메뉴</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 ₫100,000~300,000 수준(리뷰 기반 추정치, placejoys.com 확인). 개별 메뉴 정찰가는 확인 안 됨</span><span class="meta-item">⏰ 오전 7:00~오후 9:00</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 이른 아침(오전 7시)부터 문을 열어 조식으로 이용 가능하다는 점이 다른 그랜드월드 식당과 차별점.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=마담타오+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://phuquocmap.com/wp-content/uploads/2026/01/Quan-Bo-To-68-Phu-Quoc-Grand-World.jpg" alt="보톡 68번 (Bò Tơ 68 추정 표기)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">phuquocmap.com 매장 소개 페이지 - 그랜드월드 지점</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 그랜드월드 인근</span>
+                  <h3>보톡 68번 (Bò Tơ 68 추정 표기)</h3>
+                </div>
+                <p class="desc">그랜드월드 인근 숙소에서 도보 5분 거리에 있는 송아지고기·해산물 전문 BBQ 식당이다. 야시장 같은 분위기의 야외 좌석에서 수조에 담긴 해산물과 꼬치 메뉴를 함께 즐길 수 있다는 유튜브 후기가 있다. 생고기를 그대로 구워주는 방식이라 재료 신선도에 대한 자신감이 느껴진다는 평도 있다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>송아지 갈비구이(큰 덩어리)</b>: 235,000동, 베스트셀러 메뉴</li><li><b>2인 콤보(새우·오징어·송아지 꼬치)</b>: 568,000동</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 2인 콤보(새우꼬치·오징어꼬치·송아지꼬치 등) 568,000동, 송아지 갈비구이 큰 덩어리(베스트셀러) 235,000동, 소고기 메뉴(베스트셀러) 195,000동</span><span class="meta-item">⏰ 11:00~24:00(자정)(그랜드월드 지점 기준, phuquocmap.com 매장정보로 확인)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 메뉴판 번호(1번 콤보, 7번 송아지 갈비, 14번 소고기)를 참고해 주문하면 편하다는 유튜브 후기가 있음.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 해당 유튜브 방문 당시 주문한 두 번째 메뉴가 30분 이상 늦게 나오고 옆 테이블에 잘못 서빙되는 등 서비스가 느렸다는 후기가 있음. 대가족 동반 시 배가 많이 고픈 상태로 방문하지 않는 것을 권장.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=보톡 68번+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>중부 · 즈엉동·소나시·롱비치 권역 (14개 장소)</h2>
+      <p>시내 생활권, 야시장, 맛집, 마트 및 중심 숙소</p>
+      <iframe class="map" title="푸꾸옥 중부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.94%2C10.12%2C104.02%2C10.25&amp;layer=mapnik"></iframe>
+      <div class="cards">
+        
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://view-cdn.nate.com/nate-view/2026/03/25193550/CP-2023-0042-35894901-thumb-1200x800.jpg" alt="세일링 클럽 시그니처 리조트 푸꾸옥 (Sailing Club Signature Resort Phu Quoc)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">네이트 뷰 - 다빛의 다 빛나는 순간 블로그</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 푸꾸옥 남부(케 지역), 워터프론트/비치스퀘어에서 차로 약 15분</span>
+                  <h3>세일링 클럽 시그니처 리조트 푸꾸옥 (Sailing Club Signature Resort Phu Quoc)</h3>
+                </div>
+                <p class="desc">2022년 오픈한 스칸디나비아 스타일의 5성 신상 풀빌라 리조트로, 유튜브 브이로그 두 곳과 개인 여행블로그에서 공통으로 만족도가 높게 언급된다. 방문객들은 리조트 내 이동에 버기카를 이용하고, 객실 바로 앞에 프라이빗 수영장이 있는 구조를 가장 큰 장점으로 꼽는다. 한 유튜버는 1년 만에 재방문할 만큼 만족했다고 밝혔고, 조식과 미니바(스낵·음료·맥주 무료 포함) 등 서비스 구성이 좋다는 후기가 반복된다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>시그니처 원베드룸 풀빌라</b>: 분리된 거실·주방 + 객실 전용 프라이빗 수영장 구조 (개인블로그 후기)</li><li><b>조식/미니바</b>: 매일 조식 무료 제공, 미니바 스낵·음료·맥주 무료, 유아 조식 무료(개인블로그 후기)</li><li><b>부대시설</b>: 레스토랑, 마켓, 스파(리조트 옆 소라스파 이용 후기 있음), 헬스장, 대형 수영장</li><li><b>이동</b>: 리조트 내 버기카로 이동, 야시장까지 차로 약 15분</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 18만~34만원대 (Kayak.co.kr·Booking.com 등 OTA 최저가~평균가 기준, 시그니처 풀빌라 타입; 시즌·요일에 따라 변동)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (OTA 표준 정책 기준; 레이트 체크아웃 옵션 있다는 후기 있음, 유료 가능성)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 한 개인블로그는 4월 요금 인상 전인 3~4월을 방문 최적기로 추천. 유튜버는 리조트 부속 레스토랑에서 노을을 볼 수 있다고 언급, 인접한 소라스파(Sora Spa)를 마사지 장소로 추천.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=세일링 클럽 시그니처 리조트 푸꾸옥+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://ak-d.tripcdn.com/images/0230112000t6gueex281A_R_550_412_R5.jpg" alt="인터컨티넨탈 푸꾸옥 롱비치 리조트 (InterContinental Phu Quoc Long Beach Resort)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">Trip.com</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 푸꾸옥 남부, 세일링 클럽 시그니처 리조트에서 차로 약 5분 거리</span>
+                  <h3>인터컨티넨탈 푸꾸옥 롱비치 리조트 (InterContinental Phu Quoc Long Beach Resort)</h3>
+                </div>
+                <p class="desc">여러 개의 수영장과 화이트샌드 비치, Ink360 레스토랑을 갖춘 5성급 리조트로, 재방문한 유튜버가 &#x27;가격도 적당하고 조식 맛있고 시설이 가득하다&#x27;고 평가했다. 스테이폴리오 저널은 파도 소리가 들리는 객실과 오션뷰를 특징으로 꼽으며 가족 여행객에게도 추천했다. 남부 명물인 &#x27;키스 오브 더 씨(Kiss of the Sea)&#x27; 불꽃놀이 공연을 호텔에서 직접 예약·안내해준다는 실사용 후기가 있다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>객실</b>: 욕조에서 보이는 뷰가 좋다는 후기(정확한 룸타입명 확인 안 됨), 넓은 객실감</li><li><b>수영장/해변</b>: 다수의 수영장, 화이트샌드 해변 인접</li><li><b>다이닝</b>: Ink360 레스토랑, 수영장 레스토랑 Ombra(화덕피자, 선베드 주문 가능)</li><li><b>액티비티</b>: 남부 &#x27;키스 오브 더 씨&#x27; 불꽃놀이 쇼를 호텔에서 티켓 예약 대행</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 20만~40만원대 (한국어 OTA 종합 기준, 룸타입·시즌에 따라 변동. 2026년 클럽 인터컨티넨탈 라운지 이용시 1인당 1박 USD 66~100 추가 요금 별도 안내)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (IHG 공식 사이트·OTA 기준)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 불꽃놀이 쇼는 우천시 취소될 수 있어 인터컨티넨탈 프론트에서 당일 진행 여부를 확인 후 티켓을 끊는 방법을 추천하는 후기가 있음(사전 온라인 예매도 가능).</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=인터컨티넨탈 푸꾸옥 롱비치 리조트+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://dry7pvlp22cox.cloudfront.net/mrt-images-prod/2026/03/25/cpjg/LcdonerOKR.jpg" alt="베스트웨스턴 (프리미어 소나시) 푸꾸옥 - 풀빌라 (Best Western Phu Quoc)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">마이리얼트립</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 롱비치 인근, 소나시 야시장 도보 10분, 공항에서 차로 10~15분</span>
+                  <h3>베스트웨스턴 (프리미어 소나시) 푸꾸옥 - 풀빌라 (Best Western Phu Quoc)</h3>
+                </div>
+                <p class="desc">500실 이상의 대형 풀빌라 리조트로, 11명 안팎의 대가족 여행에 특히 유용한 &#x27;디럭스 3베드룸 풀빌라&#x27;를 다룬 개인 여행블로그 글이 있다. 이 글에 따르면 10명까지 한 빌라에 머물 수 있는 구조가 특징이며, 라군형 메인 수영장·키즈클럽·스파·스카이바 등 부대시설을 갖췄다. 해당 글은 2025년 12월 게시로 비교적 최신 정보다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>디럭스 3베드룸 풀빌라</b>: 최대 약 10명까지 수용 가능한 구조로 대가족 추천(개인블로그 기준, 정확한 가격 확인 안 됨)</li><li><b>메인 라군 풀</b>: 성인·아이 모두 이용 가능한 라군형 수영장</li><li><b>부대시설</b>: 키즈클럽(실내외), 스파, 피트니스, 스카이바(루프탑 선셋 칵테일), 풀사이드 바</li><li><b>조식</b>: 6:00~10:30 뷔페식, 베트남·서양식 혼합</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 12만~36만원대 (한국어 OTA 종합 기준, 호텔동 최저가~빌라동 상단가로 편차 큼. 정확한 3베드룸 풀빌라 전용가는 확인 안 됨)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (개인블로그 기준)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 체크인 전/체크아웃 후 짐 보관 가능, 도착시 웰컴드링크 제공(개인블로그 기준).</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 11명 등 대가족이라면 3베드룸 풀빌라 1채로 몰아 넣기보다, 같은 층/인접 객실로 여러 채를 나눠 예약하는 편이 고령자 동선에 유리할 수 있음 — 다만 이 리조트 자체의 층 배정·엘리베이터 정보는 출처에서 확인되지 않음(확인 안 됨).</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=베스트웨스턴+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://phuquoc.regenthotels.com/sites/rpq/files/styles/width_1920/public/homepage-slider/Regent%20Phu%20Quoc%202026%2054_1.jpg?itok=p8WMgEEs" alt="리젠트 푸꾸옥 (Regent Phu Quoc)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">공식 사이트 (Regent Hotels)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 해안선 조망 위치 (세부 지역 확인 안 됨)</span>
+                  <h3>리젠트 푸꾸옥 (Regent Phu Quoc)</h3>
+                </div>
+                <p class="desc">BLINK Design Group이 설계한 현대적 럭셔리와 베트남 전통 건축이 어우러진 리조트로, 스테이폴리오 저널과 트립닷컴 모먼츠 게시물 두 곳에서 공통으로 다뤄졌다. 각 빌라에 약 10m 길이의 프라이빗 수영장이 있고 해안선이 트인 전망을 제공한다는 점, 대형 키즈클럽과 다양한 어린이 프로그램을 갖춰 가족여행에 적합하다는 점이 반복 언급된다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>풀빌라</b>: 약 10m 길이 프라이빗 수영장, 해안선 오픈뷰</li><li><b>키즈클럽</b>: 초대형 키즈클럽과 다양한 어린이 프로그램</li><li><b>웰컴 서비스</b>: 풍성한 웰컴 기프트, 미니바 무료 제공 언급</li><li><b>다이닝</b>: 복수의 레스토랑, 인피니티 풀</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 확인 안 됨 (검색된 소스마다 편차가 매우 커서 확정 불가: 마케팅성 사이트는 1박 USD 668, 일부 OTA 환산가는 1박 약 40만~55만원대로 상이. 고가 5성 풀빌라 리조트라는 점만 여러 소스에서 공통 확인됨)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (OTA 기준)</span></div>
+                
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=리젠트 푸꾸옥+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Ch%C3%B9a_H%E1%BB%99_Qu%E1%BB%91c_%E1%BB%9F_%C4%91%E1%BA%A3o_Ph%C3%BA_Qu%E1%BB%91c%2C_s%E1%BB%91ng_%E1%BA%A3o_tung_ch%E1%BA%A3o%2C_th%C3%A1ng_3_n%C4%83m_2021_%282%29.jpg/500px-Ch%C3%B9a_H%E1%BB%99_Qu%E1%BB%91c_%E1%BB%9F_%C4%91%E1%BA%A3o_Ph%C3%BA_Qu%E1%BB%91c%2C_s%E1%BB%91ng_%E1%BA%A3o_tung_ch%E1%BA%A3o%2C_th%C3%A1ng_3_n%C4%83m_2021_%282%29.jpg" alt="호국사(Ho Quoc Pagoda)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, Phương Huy</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 남부 즈엉또(Duong To), 즈엉동에서 남쪽 약 25km</span>
+                  <h3>호국사(Ho Quoc Pagoda)</h3>
+                </div>
+                <p class="desc">산을 등지고 바다를 내려다보는 언덕 위에 자리한 푸꾸옥 최대 규모 불교 사찰입니다. 2010년대 이후 지어진 비교적 새 사찰이지만 전통 베트남식 목조 건축과 섬 자연경관이 어우러져 있고, 관광지이면서 동시에 현지인들이 실제로 기도하러 오는 영적 공간이라 차분한 분위기가 특징입니다. 남부 투어 패키지에서 사오비치·감옥박물관과 함께 자주 묶여 방문됩니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>삼문(일주문)</b>: 깨달음·지혜·해탈을 상징하는 세 개의 문</li><li><b>약 70개의 돌계단</b>: 본당(대웅전)까지 이어지며 양옆에 용 조각 장식, 포토스팟</li><li><b>18나한상 &amp; 대형 해수관음상</b>: 언덕을 오르며 만나는 조각상들, 관음상 앞이 대표 기념사진 포인트</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 무료</span><span class="meta-item">⏰ 매일 06:00~18:00</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 이른 오전 방문 추천 — 덜 덥고 바다색이 가장 선명하며 방문객도 적음. 짐이 많거나 어르신·아이 동반이라면 프라이빗 렌트카(기사포함)로 남부 코스(호국사→사오비치)를 묶어 이동하는 것이 편하다는 후기.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 본당까지 약 70개의 돌계단을 올라야 해서 거동이 불편한 고령자에게는 부담이 될 수 있음. 돌아올 때 그랩(택시) 잡기가 거의 불가능할 만큼 외진 곳이라 렌트카나 왕복 픽업 예약 권장.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=호국사+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Beach_near_Ham_Ninh_Phu_Quoc.JPG/500px-Beach_near_Ham_Ninh_Phu_Quoc.JPG" alt="함닌 어촌마을(Ham Ninh Fishing Village)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, Tonbi ko</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 섬 동쪽 중부 해안</span>
+                  <h3>함닌 어촌마을(Ham Ninh Fishing Village)</h3>
+                </div>
+                <p class="desc">관광지화되지 않은 소박한 현지 어촌 마을로, 바다를 따라 약 200m가량 도로가 이어지며 일출·일몰 감상 포인트로도 꼽힙니다. 주민 대부분이 어업에 종사하고 있어 한국의 노량진 수산시장처럼 즉석에서 해산물을 주문해 먹을 수 있다는 후기가 있습니다. 인근에 진주 양식장이 있어 함께 묶어 방문하기 좋습니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>즉석 해산물 시장</b>: 실시간으로 주문해 먹을 수 있는 현지 수산시장 분위기</li><li><b>일출·일몰 포인트</b>: 고요하고 소박한 해안 산책로</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 마을 산책 자체는 무료(입장료 없음), 해산물 구매 시 별도 — novotelphuquoc 확인</span><span class="meta-item">⏰ 상시 개방(24시간) — 다만 일출·일몰 시간대 방문이 가장 추천된다는 점은 기존 정보와 동일 (novotelphuquoc·vinpearl 확인)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 화려한 리조트 지역과 대비되는 로컬 분위기를 원한다면 추천. 근처 진주양식장과 묶어 반나절 코스로 계획 가능.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=함닌 어촌마을+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Phu_quoc_suoi_tranh.jpg/500px-Phu_quoc_suoi_tranh.jpg" alt="수오이짠 폭포(Suoi Tranh Waterfall)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 3.0, ntt</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 국립공원 내부</span>
+                  <h3>수오이짠 폭포(Suoi Tranh Waterfall)</h3>
+                </div>
+                <p class="desc">푸꾸옥 국립공원 안에 위치한 트레킹형 폭포로, 입구 쪽 동굴·주민 동상 등을 지나 완만한 평지에 가까운 산책로를 따라 오르면 폭포와 계곡이 나옵니다. 나무 그늘이 트레킹 내내 이어져 더운 날씨에도 비교적 쾌적하게 다녀올 수 있고, 폭포 도달 전 계곡에서 아이들과 발을 담그고 놀기 좋은 얕은 물웅덩이가 있습니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>완만한 트레킹로</b>: 경사가 거의 없어 어른·아이 모두 오르기 수월하나 바닥이 미끄러움</li><li><b>계곡 물놀이 포인트</b>: 폭포 도달 전 수심 얕은 계곡에서 아이와 함께 물놀이 가능</li><li><b>입구 동상·동굴</b>: 옛 섬 주민 모습을 형상화한 동상 등 트레킹 전 볼거리</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 성인 30,000 VND, 아동 20,000 VND (2026년 기준, bestpricetravel.com·다수 영문 여행 가이드 일치)</span><span class="meta-item">⏰ 약 07:00~18:00 (일부 출처는 21:00까지로 표기 — 정확한 폐장시각은 출처 간 소폭 차이가 있어 현장 확인 권장)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 바닥이 미끄러우니 아쿠아슈즈 착용 권장. 큰 규모의 폭포는 아니라는 후기이니 기대치를 조절할 것. 폭포수가 가장 풍부한 시기는 우기(대략 6~11월)이며, 건기(대략 12월~4월)에는 수량이 크게 줄거나 마를 수 있음.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 트레킹로는 완만해 고령자·아이 동반에 무리는 없다는 후기이나 우천 시 바닥이 미끄러워 낙상 주의. 폭포 자체를 보려면 우기(6~11월) 방문이 유리하고, 건기(12~4월)는 안전한 트레킹(덜 미끄러움) 측면에서 언급되는 시기라 두 기준(볼거리 vs 트레킹 안전)이 다르다는 점을 구분해서 판단할 것.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=수오이짠 폭포+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Dinh_Cau_Night_Market_-_panoramio.jpg/500px-Dinh_Cau_Night_Market_-_panoramio.jpg" alt="즈엉동 야시장(딘꺼우 야시장)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 3.0, Fox Travels</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 즈엉동 시내 중심, 딘꺼우 사원에서 도보 약 5분</span>
+                  <h3>즈엉동 야시장(딘꺼우 야시장)</h3>
+                </div>
+                <p class="desc">즈엉동 시내 중심가에 서는 대표 야시장으로, 분짜·해산물꼬치 등 길거리 음식과 진주 귀걸이·가죽제품 같은 기념품을 함께 즐길 수 있습니다. 시장 인근에는 실내형 해산물 식당 블루씨푸드(Blue Seafood)가 있어 노점 위생이 걱정되는 가족 단위 여행객들에게 대안으로 언급됩니다. 여행자거리 숙소들과 도보권이라 접근성이 좋습니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>길거리 해산물·현지 음식</b>: 분짜, 해산물꼬치 등</li><li><b>블루씨푸드(Blue Seafood)</b>: 버터갈릭새우·파기름가리비·해산물볶음밥이 유명한 실내 해산물 맛집, 한국어 메뉴판 있음, 34 Đường Nguyễn Trãi 위치</li><li><b>기념품 쇼핑</b>: 진주 귀걸이, 가죽 제품 등</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 입장 무료, 먹거리·쇼핑은 개별 지불</span><span class="meta-item">⏰ 매일 18:00~23:00 (출처별로 17:30~23:30 사이 약간 차이). 낮에는 일반 재래시장으로도 운영. 인근 대표 맛집 블루씨푸드(Blue Seafood)는 매일 11:30~23:00</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 노점 위생이 걱정되면 시장 인근 실내 식당(블루씨푸드 등)을 이용. 여행자거리(즈엉동) 숙소를 잡으면 야시장·딘꺼우사원까지 도보로 이동 가능해 대가족 이동 부담이 줄어든다는 후기.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=즈엉동 야시장+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://izitour.com/media/blog/phu-quoc-night-market.webp" alt="즈엉동 야시장 (딘까우 야시장, Duong Dong Night Market)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">izitour.com 여행 블로그</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 즈엉동 시내 중심가</span>
+                  <h3>즈엉동 야시장 (딘까우 야시장, Duong Dong Night Market)</h3>
+                </div>
+                <p class="desc">푸꾸옥 최대 규모의 야시장으로, 수조에서 직접 고른 랍스터·새우·오징어·가리비를 그 자리에서 숯불 구이로 즉석 조리해준다. 대가족 여행 관련 블로그에서 아이들과 함께 방문하기 좋은 대표 명소로 꼽혔고, 유튜브 영상 두 편(승무원 채널, 비몰 채널) 모두 이 야시장을 기준점 삼아 주변 로컬 맛집을 소개할 만큼 상징적인 위치다. 가장 붐비는 시간대는 밤 8~9시경(오후 7~10시)으로 알려져 있다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>즉석 해산물 구이</b>: 랍스터·새우·오징어·가리비 등을 골라 숯불 구이로 조리</li><li><b>코코넛 아일랜드 주스 가게(야시장 내)</b>: 망고 스무디가 맛있다는 유튜브 후기(가격 확인 안 됨)</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 노점마다 상이, 흥정 가능(정찰제 매대도 일부 존재)</span><span class="meta-item">⏰ 저녁 5시~밤 11시~11시30분이 다수 독립 출처(vietnamairlines.com, izitour.com 등)의 공통 정보임. 일부 노점은 오후 3시부터 열어 자정 전후까지 영업한다는 자료도 있으나, 이는 노점별·성수기 편차로 설명 가능하며 핵심 영업시간대 자체는 3개 이상 독립 출처에서 일치함</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 흥정이 가능한 노점이 많으니 값을 물어보고 결정할 것. 붐비는 8~9시를 피해 이른 저녁에 가면 덜 혼잡하다는 팁도 있음.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 대가족·아이 동반 시 방문하기 좋은 곳으로 언급되나, 야외이고 인파가 많아 저녁 피크타임(8~9시)엔 고령자 동반 시 혼잡할 수 있음(추론이 아닌 붐비는 시간대 정보에 근거).</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=즈엉동 야시장+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 즈엉동 시내, 여행자 거리 벱비엔 인근</span>
+                  <h3>또 하우스 (Tổ House, 일부 자료에는 &#x27;똠하우스&#x27;로 표기)</h3>
+                </div>
+                <p class="desc">즈엉동 야시장 입구, 여행자 거리에 위치한 해산물 전문 식당이다. 유튜브 여행 가이드 채널과 스레드(Threads) 여행 후기 두 곳에서 독립적으로 언급된 곳으로, 기본 쌀국수부터 매운 해산물 라면, 살이 통통한 생선 요리까지 메뉴 폭이 넓다는 공통된 평이 있다. 에어컨이 잘 나오고 위생 상태가 깔끔해 한국인 입맛에 잘 맞는다는 평가가 반복된다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>치즈 새우</b>: 마늘과 버터, 치즈 양념이 잘 배어 빵에 찍어먹기 좋다는 후기(가격 확인 안 됨)</li><li><b>해산물 플레터</b>: 다양한 해산물에 면을 추가해 파스타처럼 즐길 수 있음</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 확인 안 됨</span><span class="meta-item">⏰ 확인 안 됨</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 반미 맛집 &#x27;반미담&#x27;에서 도보 약 3분 거리로, 함께 묶어 다니기 좋다는 팁이 유튜브 영상에 있음.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 재검증 과정에서 한국어·영어·베트남어로 여러 차례 재검색했으나 초안의 두 출처(유튜브, Threads) 외에 이 업체를 독립적으로 언급한 자료를 찾지 못함. 존재 여부 자체를 부정할 근거도 없어 항목은 유지하되, 방문 전 구글맵 등에서 현지 최신 정보 재확인을 권장.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=또 하우스+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://storage.googleapis.com/takeapp/media/cmfhyiipp000704ii22fadds6.jpg" alt="오케이 비스트로 (OK Bistro / OKEI BISTRO)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">공식 사이트(OKEI BISTRO)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 중부 소나시(Sonasi) 지역</span>
+                  <h3>오케이 비스트로 (OK Bistro / OKEI BISTRO)</h3>
+                </div>
+                <p class="desc">노보텔 리조트 인근, 소나시 야시장 가는 길에 위치한 로컬 베트남 식당이다. 블로그 두 곳(mytravelcode, vnguide)과 Threads 후기에서 공통으로 언급되며, 분짜가 특히 맛집으로 꼽힌다. 야외 좌석 위주라는 언급이 있어 더위에 유의할 필요가 있다. 한국어 메뉴판이 있어 주문이 수월하다는 평이 많다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>분짜</b>: vnguide 블로그에서 &#x27;분짜 맛집&#x27;으로 소개, 가격 확인 안 됨</li><li><b>망고 스무디 · 모닝글로리 볶음</b>: 다른 메뉴들과 함께 자주 언급되는 인기 메뉴</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 메뉴 단가 기준(okeibistro.com 공식 사이트 확인): 쌀국수·쌀밥류 70,000~80,000동, 해산물·고기 요리 150,000~200,000동. 분짜 등 개별 시그니처 메뉴의 정찰가는 확인 안 됨</span><span class="meta-item">⏰ 오전 7:00~오후 8:00</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 야외 좌석 위주라는 후기가 있으니 한낮보다는 선선한 시간대 방문이 나을 수 있음.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=오케이 비스트로+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://ak-d.tripcdn.com/images/1mi1i224x8uwiyb5x72CD_W_640_0_R5_Q80.jpg?proc=source/trip" alt="메오 키친 (Meo Kitchen)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">Trip.com 여행 후기 사진</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 즈엉동, 킹콩마트 도보 5분 거리</span>
+                  <h3>메오 키친 (Meo Kitchen)</h3>
+                </div>
+                <p class="desc">베트남 전통 요리를 현대적 감각으로 재해석한 곳으로, 여러 블로그와 여행 플랫폼에서 공통으로 추천된다. 모던한 인테리어와 잘 작동하는 에어컨, 깔끔한 테이블 세팅이 다른 로컬 식당 대비 강점으로 꼽힌다. 아이 동반을 환영하는 분위기라는 언급도 있어 가족 단위 여행객에게 참고가 된다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>반쎄오</b>: 바삭한 튀김옷이 특징이라는 평</li><li><b>쌀국수</b>: 국물 맛이 좋다는 평</li><li><b>커플 세트 메뉴</b>: 가격 확인 안 됨</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 중간~상위 가격대(₩₩-₩₩₩)로만 확인, 구체적 액수는 확인 안 됨</span><span class="meta-item">⏰ 재검색으로도 단일 값에 수렴하지 않음 — 확인 안 됨. 출처별 표기: &#x27;11:00~21:30&#x27;(trip.com 식당 상세 페이지), &#x27;06:30~22:30&#x27;(초안 원출처), &#x27;06:00~24:00&#x27;(또 다른 요약 자료)로 서로 다름</span></div>
+                
+                <div class="caution-note">⚠️ <b>주의:</b> 아이 동반 환영 분위기라는 언급이 있어 대가족 여행에 참고할 만하나, 정확한 좌석 규모(대형 테이블 여부)는 확인 안 됨.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=메오 키친+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://media-cdn.tripadvisor.com/media/photo-s/22/84/d9/99/the-home-pizza-phu-quoc.jpg" alt="더 홈 피자 (The Home Pizza)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">Tripadvisor 매장 대표 사진</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 쩐훙다오 거리</span>
+                  <h3>더 홈 피자 (The Home Pizza)</h3>
+                </div>
+                <p class="desc">이탈리아식 화덕 피자 전문점으로, 매장에 들어서면 바로 보이는 화덕이 분위기를 살린다는 유튜브 후기가 있다. 블로그 리스트에서도 &#x27;화덕에서 구워지는 두리안·해산물·마르게리타 피자&#x27;로 소개되며 두 소스 모두 화덕 피자를 핵심 포인트로 짚었다. 은은한 조명과 테이블 세팅이 로맨틱한 분위기를 만들어 연인 여행객에게도 추천된다는 언급이 있다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>마르게리타 피자</b>: 쭉 늘어나는 신선한 치즈와 상큼한 토마토가 특징</li><li><b>볼로네제 파스타</b>: 고기듬뿍 소스</li><li><b>두리안·해산물 피자</b>: 블로그 리스트에서 추가로 언급된 메뉴(상세 정보 확인 안 됨)</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 볼로네제 파스타 + 마르게리타 피자 + 음료 세트 약 45만5천동(2인 기준, 유튜브 후기 기준)</span><span class="meta-item">⏰ 오전 11:00~오후 10:00(매일) — Tripadvisor 매장 정보로 확인</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 화덕 피자치고 가격이 저렴하다는 평(2인 세트 45.5만동)이니 인원수에 맞춰 여러 메뉴를 시켜볼 만함.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=더 홈 피자+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://ak-d.tripcdn.com/images/1mi5i2224x1jkthv5C87E_W_640_0_R5_Q80.jpg?proc=source/trip" alt="지주 카페 (Ziru Cafe)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">Trip.com 여행 후기 사진 - 지주 카페 인스타 감성 인테리어</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">맛집·카페 · 중부, &#x27;손트라 커피(Sơn Trà coffee)&#x27; 바로 맞은편</span>
+                  <h3>지주 카페 (Ziru Cafe)</h3>
+                </div>
+                <p class="desc">목걸이를 한 양(염소) 조형물과 오두막, 정원 등 포토존이 많은 인스타 감성 로컬 카페다. 2층 루프탑에서 자연친화적인 뷰를 감상할 수 있고, 목조 인테리어가 독특하다는 유튜브 후기가 있다. 여행 플랫폼 후기에서도 &#x27;감각적인 인테리어의 인스타 감성 카페&#x27;로 소개되며 평점이 높은 편(4.4/5, 리뷰 73개)이다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>소다 갤럭시 지주</b>: 60,000동</li><li><b>요구르트 지주</b>: 55,000동</li><li><b>지주 믹스 과일차</b>: 60,000동</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 음료 1잔 55,000~60,000동, 1인 평균 40,000~80,000동</span><span class="meta-item">⏰ 매일(월~일 동일) 08:00~23:00 — tripcoupon.com 매장정보 페이지에서 요일별로 확인. 트립닷컴 모먼트 페이지에 있던 &#x27;24시간 연중무휴&#x27; 표기는 독립 출처(tripcoupon.com)와 불일치하여 해당 페이지의 오기로 판단, 08:00~23:00으로 확정</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 야경도 예쁘다는 후기가 있어 저녁 방문을 추천하는 코멘트가 있음. 음료 2잔 가격이 한국 돈 6~7천원 수준으로 저렴하다는 유튜브 후기와 개별 음료 단가(55,000~60,000동) 정보가 서로 부합함.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=지주 카페+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>남부 · 안터이·케이블카·켐비치 권역 (7개 장소)</h2>
+      <p>혼똠섬, 호국사, 사오비치, 남부 고급 리조트</p>
+      <iframe class="map" title="푸꾸옥 남부 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=103.96%2C9.98%2C104.08%2C10.12&amp;layer=mapnik"></iframe>
+      <div class="cards">
+        
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/48eb5a77-4832-400c-9098-2f1f383dbc88.jpeg" alt="프리미어 빌리지 푸꾸옥 리조트 (Premier Village Phu Quoc Resort, managed by Accor)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">NOL 인터파크투어 (Triple CMS 이미지)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 푸꾸옥 남단, 동쪽 일출·서쪽 일몰을 함께 볼 수 있는 위치</span>
+                  <h3>프리미어 빌리지 푸꾸옥 리조트 (Premier Village Phu Quoc Resort, managed by Accor)</h3>
+                </div>
+                <p class="desc">전 객실이 프라이빗 풀을 갖춘 풀빌라로 구성된 리조트로, 신혼여행 브이로그와 스테이폴리오 저널에서 공통으로 다뤄졌다. 유튜버 실제 투숙 영상에서는 2층 구조의 빌라(1층 메인 풀장·주방·냉장고, 2층 침실)와, 인원수에 따라 방을 배정하고 가격이 달라지는 방식이 확인된다. 가든뷰와 오션뷰 룸을 모두 보여주는 후기가 있으며, 스테이폴리오는 프론트데스크 직원의 친절함과 한국어 가능 직원 존재, 키즈클럽 선생님들의 친절도를 가족여행 강점으로 소개한다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>2층 풀빌라 구조</b>: 1층 거실·주방(대형 냉장고)·프라이빗 풀, 2층 침실(욕조 포함); 인원수별로 객실 배정·가격 상이(유튜브 실투숙 확인)</li><li><b>뷰 옵션</b>: 가든뷰(섬 조망) / 오션뷰 선택 가능</li><li><b>가족 시설</b>: 키즈클럽 운영, 스테이폴리오 후기에서 아이 동반 여행에 특히 좋았다는 평</li><li><b>위치 특성</b>: 남단 위치로 동쪽 해변 일출, 서쪽 해변 일몰을 모두 즐길 수 있음</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 36만~48만원대 (OTA 최저가~평균가 기준 풀빌라; 시즌에 따라 변동. 체크인시 약 100만동 보증금 별도라는 후기 있음)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (OTA 기준)</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 체크인 시 약 100만동 상당의 보증금이 필요하다는 언급이 있어(체크아웃시 환급), 현금을 준비해가는 것이 좋음.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=프리미어 빌리지 푸꾸옥 리조트+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://ak-d.tripcdn.com/images/1mi5b224x9567xhkbDA26.jpg?proc=source/trip" alt="뉴 월드 푸꾸옥 리조트 (New World Phu Quoc Resort)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">Trip.com 모먼츠</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 켐 비치(Kem Beach) 인근, 어촌 마을 분위기</span>
+                  <h3>뉴 월드 푸꾸옥 리조트 (New World Phu Quoc Resort)</h3>
+                </div>
+                <p class="desc">전 객실이 초가지붕 형태의 풀빌라로 구성된 리조트로, 120m 길이 인피니티 풀이 인상적인 시설로 소개된다. 유튜브 브이로그(2023년 12월 게시, 다소 오래된 정보일 수 있음)에서 풀빌라·켐 비치·델루나 스파를 다뤘고, 트립닷컴 모먼츠 게시물에서도 인피니티 풀과 전 객실 풀빌라 구성이 언급돼 두 출처가 겹친다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>전객실 풀빌라</b>: 초가지붕(타치드 루프) 스타일 빌라, 개인 프라이빗 풀</li><li><b>인피니티 풀</b>: 약 120m 길이의 메인 인피니티 풀</li><li><b>스파</b>: 델루나 스파(De Luna Spa) 이용 후기</li><li><b>위치</b>: 켐 비치와 인접, 어촌 마을 같은 조용한 분위기</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 21만~41만원대 (USD 210~298 수준, 한국어·영어 OTA 종합 기준; 룸타입·시즌에 따라 변동)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (OTA 기준)</span></div>
+                
+                <div class="caution-note">⚠️ <b>주의:</b> 관련 유튜브 자료가 2023년 12월 게시로 2년 이상 지난 정보라 현재 시설·가격과 다를 수 있음에 유의.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=뉴 월드 푸꾸옥 리조트+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Jw-marriott-phu-quoc-bai-kem.jpg" alt="JW 메리어트 푸꾸옥 에메랄드 베이 리조트 &amp; 스파" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">Wikimedia Commons - Vivu Vietnam (CC BY-SA 4.0)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">숙소 · 켐 비치 해안, 공항에서 차로 약 25분</span>
+                  <h3>JW 메리어트 푸꾸옥 에메랄드 베이 리조트 &amp; 스파</h3>
+                </div>
+                <p class="desc">2017년 오픈, 빌 벤슬리가 디자인한 &#x27;가상의 대학 캠퍼스&#x27;를 테마로 한 리조트로 시그니처 조개껍질 모양의 쉘풀이 특징이다. 전용 풀빌라는 허니문뿐 아니라 가족여행에도 추천되며 왕복 교통과 전담 버틀러 서비스가 포함된다는 점이 트립닷컴과 스테이폴리오 두 출처에서 공통 확인된다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>전용 풀빌라</b>: 개인 플런지풀 포함, 왕복 공항 교통편 + 전담 버틀러 서비스 포함</li><li><b>쉘풀(Shell Pool)</b>: 대형 조개껍질 모양의 시그니처 야외 수영장</li><li><b>디자인 컨셉</b>: 빌 벤슬리 디자인, &#x27;판타지 대학&#x27; 테마의 캔디톤 외관</li><li><b>위치</b>: 켐 비치 해변가, 공항에서 차로 약 25분</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 1박 약 40만~80만원대 (한국어 OTA 종합 기준; 영어권 소스로는 USD 290~500대 수준, 룸타입·시즌에 따라 변동)</span><span class="meta-item">⏰ 체크인 15:00 / 체크아웃 12:00 (Marriott 공식 사이트·OTA 기준)</span></div>
+                
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=JW 메리어트 푸꾸옥 에메랄드 베이 리조트 &amp;amp; 스파+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Hon_Thom_Cable_Car_aerial_view_Phu_Quoc_Island_Vietnam.jpg/500px-Hon_Thom_Cable_Car_aerial_view_Phu_Quoc_Island_Vietnam.jpg" alt="혼똠 케이블카 &amp; 선월드(Sun World Hon Thom)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, Vivu Vietnam</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 남부 안토이(An Thoi) 안즈엉역 → 혼똠섬(Hon Thom Island)</span>
+                  <h3>혼똠 케이블카 &amp; 선월드(Sun World Hon Thom)</h3>
+                </div>
+                <p class="desc">베트남 남부 안토이 항구에서 혼똠섬까지 이어지는 세계 최장(7,899.9m) 해상 케이블카로, 기네스북에 등재된 명물입니다. 편도 약 15~20분간 에메랄드빛 바다와 원시림, 안토이 어촌의 배들을 내려다볼 수 있어 이동 자체가 관광 포인트입니다. 혼똠섬 도착 후에는 아쿠아토피아 워터파크, 목재 롤러코스터, 관람타워, 최근 도입된 씨워킹(바닷속 헬멧 워킹) 체험 등을 하루 코스로 즐길 수 있습니다. 케이블카 티켓만 있으면 인근 키스 브릿지도 추가 요금 없이 입장 가능합니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>세계 최장 해상 케이블카(7,899.9m)</b>: 기네스북 등재, 날씨(바람)에 따라 흔들림·운휴가 있을 수 있음</li><li><b>씨워킹(Sea Walking) 체험</b>: 헬멧을 쓰고 바닷속을 걸으며 열대어와 교감하는 신규 체험, 2025년경 신설</li><li><b>아쿠아토피아 워터파크</b>: 2019년 말 개장, 미국 안전인증, 슬라이드 등 24개 이상 어트랙션</li><li><b>로어링 팀버스(목재 롤러코스터)</b>: 높이 32.4m, 최고 시속 80km, 탑승 최소 신장 140cm</li><li><b>키스 브릿지</b>: 케이블카 티켓만으로 별도 요금 없이 입장 가능한 감성 포토스팟</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 왕복 케이블카(성인, 1.4m 이상) 약 70만~85만동(700,000~850,000 VND) — 출처별로 premierresidencesphuquoc 70만동, rootytrip 85만동으로 소폭 차이. 아동(1~1.4m) 55만~70만동, 1m 미만 무료. 클룩 등 온라인 사전예약은 프로모션가로 더 저렴한 3.7~3.8만원대 사례도 있음. (참고) mjw96 티스토리의 &#x27;2~2.5만원&#x27; 정보는 다수 최신 출처와 맞지 않아 신뢰도 낮음으로 판단, 채택하지 않음.</span><span class="meta-item">⏰ 매일 09:00~17:00, 점심시간 운휴(약 11:30~13:30, 출처에 따라 12:00~13:00로도 표기) — 오전 회차 09:00~11:30, 오후 회차 13:30~17:00로 두 출처(premierresidencesphuquoc, trip.com)가 기존 유튜브 정보와 동일한 구조를 확인해줌.</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 온라인(클룩/네이버여행) 사전예약이 현장발권보다 저렴하다는 후기가 많으나, 날씨를 보고 당일 결정하고 싶으면 현장발권도 대기시간은 길지 않은 편. 11:30~13:30 운휴 시간대를 피해서 입장 추천. 락커(소 5만동/대 10만동)·수건대여(5만동)는 워터파크 내 이용 가능.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 롤러코스터(로어링 팀버스) 탑승 최소 신장 140cm — 어린 아이는 못 탈 수 있음. 케이블카는 바람 등 날씨 영향을 크게 받아 흔들림이 있고 멀미가 있는 사람은 힘들 수 있다는 후기 다수.</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=혼똠 케이블카 &amp;amp; 선월드+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Phu_Quoc_Prison_Monument.jpg/500px-Phu_Quoc_Prison_Monument.jpg" alt="푸꾸옥 감옥(코코넛 수용소, Phu Quoc Prison Museum)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, Frank Fox</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 남부 안토이(An Thoi)</span>
+                  <h3>푸꾸옥 감옥(코코넛 수용소, Phu Quoc Prison Museum)</h3>
+                </div>
+                <p class="desc">프랑스 식민지 시대에 처음 지어졌다가 베트남 전쟁 당시 베트남 공산군 수용 목적으로 확장된 감옥 유적으로, 한때 최대 3만2천~4만 명이 수감되었던 베트남 남부 최대 규모 수용소입니다. 현재는 국가 역사기념물(1995년 지정)이자 박물관으로, 실내 소규모 전시관과 야외 감옥 재현 공간으로 나뉘어 있습니다. 철조망, 감시탑, 고문 재현 모형 등이 사실적으로 복원되어 있어 화려한 휴양지 이미지와 다른 베트남의 아픈 역사를 마주할 수 있는 곳입니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>고문·수용 재현 모형</b>: 철망 감방, 감시탑 위 군인 모형, 경비견 모형까지 실물 크기로 재현</li><li><b>코코넛 껍질 땅굴 탈출 디오라마</b>: 수용자들이 하루치 배급 코코넛 껍질을 도구 삼아 땅굴을 팠던 모습을 재현(다만 &#x27;코코넛 수용소&#x27;라는 명칭 자체는 현지 가이드에 따르면 부정확한 표현이라는 언급 있음)</li><li><b>감옥 순교자 기념비</b>: 입구 옆에 위치</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 무료</span><span class="meta-item">⏰ 매일 08:00~17:00</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 무료입장이고 규모가 크지 않아 가볍게 30분~1시간 정도면 충분하다는 후기. 남부 투어(진주박물관·후추농장·느억맘공장·호국사·사오비치)에 자주 패키지로 포함됨.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 야외 전시 구역에 그늘이 거의 없어 양산 등 햇빛 대비 필수. 고문 재현 모형이 상당히 사실적이라 어린아이에게는 자극적일 수 있다는 후기(가족 동반 시 사전 안내 권장).</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=푸꾸옥 감옥+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Bai-sao-phu-quoc-tuonglamphotos.jpg/500px-Bai-sao-phu-quoc-tuonglamphotos.jpg" alt="사오비치(Sao Beach)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">위키미디어 커먼즈, CC BY-SA 4.0, Trantuonglam</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 푸꾸옥 남부, 즈엉동에서 약 25km</span>
+                  <h3>사오비치(Sao Beach)</h3>
+                </div>
+                <p class="desc">파도가 거의 없이 잔잔하고 바닥까지 투명하게 비치는 바다와 새하얀 모래사장으로 유명한 푸꾸옥 남부 대표 해변입니다. 즈엉동 시내와 거리가 있어 접근이 조금 불편한 대신 상대적으로 덜 붐빈다는 평이 많고, 남부 투어 패키지의 점심·휴식 코스로 자주 포함됩니다. 패러세일링 같은 해양 액티비티도 가능합니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>투명한 잔잔한 바다</b>: 파도가 거의 없어 호수 같은 느낌, 바닥 모래가 비칠 정도로 맑음</li><li><b>패러세일링</b>: 해변에서 즐기는 사람들을 볼 수 있음(체험 가격 등 세부 정보는 확인 안 됨)</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 해변 자체는 무료, 파라세일링 등 액티비티는 별도. 파라솔·의자 등 시설 이용도 별도 유료라는 정보 확인(novotelphuquoc)</span><span class="meta-item">⏰ 상시 개방(24시간), 입장 무료 — novotelphuquoc.com 확인</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 대중교통 접근이 불편하니 렌트카(기사포함)나 남부 투어 패키지 이용을 추천하는 후기 다수. 상권이 발달하지 않아 숙박보다는 당일 방문지로 적합.</div>
+                
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=사오비치+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-img-wrap"><img src="https://d122axpxm39woi.cloudfront.net/images/destinations/origin/615eb68412366.jpg" alt="남부 무인도 호핑투어·스노클링(An Thoi 인근)" loading="lazy" onerror="this.style.display='none'"><span class="img-credit">BestPrice Travel (여행 플랫폼)</span></div>
+              <div class="card-body">
+                <div class="card-header">
+                  <span class="pill">관광·명소 · 안토이(An Thoi) 항구 출발, 감섬(Gam Ghi)·몽따이섬(May Rut Trong)·핑건섬(Hon Fing) 등 남부 무인도</span>
+                  <h3>남부 무인도 호핑투어·스노클링(An Thoi 인근)</h3>
+                </div>
+                <p class="desc">안토이 항구에서 배를 타고 나가 얕고 잔잔한 무인도 근해에서 스노클링을 즐기는 투어입니다. 감섬·핑건섬 등은 초보자도 부담 없을 만큼 수심이 얕고 물결이 잔잔하다는 평이 많습니다. 단체 투어와 프라이빗(단독) 투어로 나뉘며, 프라이빗은 가격은 더 나가지만 인원 컨디션에 맞춰 자유롭게 시간을 조절할 수 있어 대가족 단위에 유리합니다. 스노클링 외에 패들보드 위 스냅사진·드론 촬영을 함께 제공하는 가이드도 있습니다.</p>
+                <div class="highlights"><strong>주요 특징 / 추천 메뉴</strong><ul><li><b>초보자용 얕은 스노클링 포인트</b>: 감섬·핑건섬 등 수심 얕고 파도 잔잔</li><li><b>프라이빗(단독) 투어 옵션</b>: 그룹 눈치 안 보고 개인 컨디션에 맞춰 시간 조절 가능</li><li><b>스냅사진/드론 촬영</b>: 일부 가이드가 패들보드 위 사진·드론 영상 촬영을 함께 진행</li></ul></div>
+                <div class="meta-group"><span class="meta-item">💰 단체 투어 1인당 약 2.5만~3.5만원, 프라이빗 보트 전체 약 7만~12만원대(출처 시점·환율 확인 안 됨)</span><span class="meta-item">⏰ 반나절(4~6시간) 소요, 통상 오전 출발</span></div>
+                <div class="insider-tip">💡 <b>꿀팁:</b> 장비(예쁜 수영복 등) 미리 챙기면 스냅사진 퀄리티가 좋아진다는 후기. 호핑투어 후 마사지·키스브릿지·불꽃놀이 저녁식사로 이어지는 하루 패키지 구성도 많음.</div>
+                <div class="caution-note">⚠️ <b>주의:</b> 장비(오리발·스노클 등) 분실 시 배상을 요구받았다는 후기가 반복적으로 언급됨 — 사전에 정책 확인 권장. 바람·파도가 강한 날은 해상 일정을 무리하게 진행하지 않는 것이 안전하다는 팁(고령자 동반 시 특히 참고).</div>
+                <div class="card-action">
+                  <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=남부 무인도 호핑투어·스노클링+Phu+Quoc" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+                </div>
+              </div>
+            </div>
+            
+      </div>
+    </section>
+
+    <div class="warn">
+      <b>예약 & 방문 전 체크 Tip</b><br>
+      실제 영업 위치·운영시간·메뉴 가격은 시점에 따라 변동될 수 있습니다. 대가족(11명) 방문 시 사전에 단체석 확보 및 픽업 여부를 확인하는 것이 좋습니다.
+    </div>
+
+    <p class="footer">
+      수집·감수 완료 데이터 28개 장소 기준 (2026.08 업데이트)<br>
+      실제 방문 전 Google Maps 및 공식 채널을 다시 확인해 주세요.
+    </p>
+  </main>
+
+  <nav class="subnav" aria-label="페이지 이동">
+    <a href="index.html">일정</a>
+    <a href="island.html">정보</a>
+    <a class="active" href="places.html">숙소·지도</a>
+  </nav>
+</body>
+</html>
