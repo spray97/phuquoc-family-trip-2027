@@ -3,27 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071b2f">
+  <meta name="theme-color" content="#0b2233">
   <title>푸꾸옥 알아보기</title>
-  <style>
-    :root{--ink:#10243a;--muted:#5b707b;--paper:#f5f8fa;--card:#fff;--ocean:#087ea4;--deep:#071b2f;--line:#e2ebef;--sun:#ffc857}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.7}.wrap{width:min(100%,760px);margin:0 auto}.hero{background:linear-gradient(145deg,#071b2f,#087ea4);color:#fff;padding:23px 18px 30px}.back{display:inline-flex;align-items:center;min-height:44px;color:#d8f1f2;text-decoration:none;font-size:14px;font-weight:900}.hero h1{font-size:34px;line-height:1.1;letter-spacing:-.06em;margin:25px 0 9px}.hero p{margin:0;color:#e2f5f5;font-size:15px}.main{padding:20px 16px 100px}.section{margin:28px 0;scroll-margin-top:15px}.section h2{font-size:23px;line-height:1.25;letter-spacing:-.05em;margin:0 0 11px}.section-intro{font-size:14px;color:var(--muted);margin:-3px 0 12px}.card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:17px;margin:10px 0;box-shadow:0 8px 23px rgba(9,39,64,.05)}.card h3{font-size:18px;line-height:1.3;margin:0 0 6px;letter-spacing:-.04em}.card p{font-size:14px;color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#e9f7fa;border-radius:17px;padding:15px 13px}.stat b{display:block;color:var(--ocean);font-size:25px;letter-spacing:-.05em}.stat span{display:block;color:#536d79;font-size:12px;margin-top:2px}.region{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.region div{background:#e9f7fa;border-radius:15px;padding:14px 11px}.region b{display:block;color:var(--ocean);font-size:16px}.region span{display:block;color:#536d79;font-size:13px;margin-top:3px}.fact{border-left:3px solid var(--sun);background:#fffaf0;border-radius:0 14px 14px 0;padding:14px;font-size:14px}.timeline{border-left:3px solid #d5eaee;margin:12px 0 0 7px;padding-left:18px}.event{position:relative;margin:0 0 17px}.event:before{content:"";position:absolute;left:-27px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--ocean);box-shadow:0 0 0 4px var(--paper),0 0 0 6px #bce3e8}.event b{color:var(--ocean);font-size:14px}.event p{font-size:14px;color:var(--muted);margin:3px 0 0}.source{font-size:12px;color:#607984}.source a{color:var(--ocean);font-weight:800}.subnav{position:fixed;z-index:10;bottom:0;left:0;right:0;display:flex;justify-content:center;gap:3px;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-top:1px solid var(--line)}.subnav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:#526b78;text-decoration:none;border-radius:12px;padding:4px 12px;font-size:12px;font-weight:900}.subnav a.active{color:var(--ocean);background:#e9f7fa}.footer{text-align:center;color:#687e89;font-size:12px;margin-top:30px}:focus-visible{outline:3px solid var(--sun);outline-offset:2px}@media(max-width:380px){.stats{grid-template-columns:1fr}.region{grid-template-columns:1fr}.hero h1{font-size:31px}.subnav a{padding-left:8px;padding-right:8px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero"><div class="wrap"><a class="back" href="index.html">← 우리 가족 푸꾸옥 여행</a><h1>푸꾸옥 알아보기</h1><p>우리가 방문할 섬을 조금 더 깊이 이해해 보는 페이지</p></div></header>
-  <main class="wrap main">
-    <section class="section" id="overview"><h2>푸꾸옥은 어떤 곳인가요?</h2><p class="section-intro">푸꾸옥(Phú Quốc)은 베트남 남서쪽 태국만에 자리한 섬이자, 해양 생활문화와 대규모 휴양지가 함께 있는 지역입니다.</p><div class="card"><p>섬의 매력은 단순히 바다와 리조트에만 있지 않습니다. 오랫동안 어업과 항구를 중심으로 생활해 온 지역에 후추·느억맘·진주 같은 특산업이 더해졌고, 최근에는 국제공항과 테마파크·리조트가 결합한 관광지로 빠르게 성장했습니다. 그래서 하루 일정 안에서도 전통시장과 사원, 대형 리조트와 케이블카 풍경이 함께 나타납니다.</p></div></section>
-    <section class="section"><h2>숫자로 보는 푸꾸옥</h2><div class="stats"><div class="stat"><b>약 103,000명</b><span>공식 관광 안내의 인구 소개 기준</span></div><div class="stat"><b>59,923ha</b><span>군도 전체 자연 면적 약 599㎢</span></div><div class="stat"><b>567㎢</b><span>푸꾸옥 본섬 면적 소개 기준</span></div><div class="stat"><b>150km</b><span>해안선 길이 소개 기준</span></div></div><p class="fact"><b>수치 읽는 법</b><br>인구와 면적은 집계 시점과 행정 범위에 따라 달라질 수 있습니다. 위 수치는 푸꾸옥 관광 공식 안내가 소개하는 기준이며, 여행 감각으로는 ‘큰 섬에 여러 관광 권역이 길게 펼쳐져 있다’고 이해하면 좋습니다.</p></section>
-    <section class="section"><h2>북부·중부·남부의 성격</h2><div class="region"><div><b>북부</b><span>자연·대형 리조트·테마파크<br>이번 여행의 필수 관광권</span></div><div><b>중부</b><span>공항·즈엉동·롱비치<br>식당·마트·카페 거점</span></div><div><b>남부</b><span>안터이 군도·케이블카<br>해상 관광과 선셋</span></div></div><div class="card"><p>북부 끝에서 남부까지는 생각보다 멀기 때문에 11명 가족은 숙소를 권역에 맞추는 것이 중요합니다. 이번 여행은 북부에서 사파리·빈원더스·그랜드월드를 보고, 중부에 머물면서 남부를 하루 다녀오는 방식으로 이동 피로를 줄입니다.</p></div></section>
-    <section class="section"><h2>푸꾸옥의 큰 역사 흐름</h2><div class="timeline"><div class="event"><b>17세기 후반 · 정착과 해상 교역</b><p>공식 역사 안내는 1671년 중국계 이주민 막끄우(Mạc Cửu)가 남쪽 바다로 이동한 일을 푸꾸옥과 하띠엔 일대의 정착·개발 흐름과 연결해 설명합니다. 당시 이 지역은 캄보디아·베트남·중국계 세력이 오가던 해상 교역권이었습니다.</p></div><div class="event"><b>18~19세기 · 하띠엔과 응우옌 왕조의 영향</b><p>막씨 가문이 하띠엔 일대에서 세력을 형성한 뒤 이 지역은 베트남 남부의 정치·행정 질서와 점차 연결되었습니다. 섬의 항구와 어촌은 독립된 생활권이면서도 메콩 델타와 주변 해역을 잇는 공간으로 기능했습니다.</p></div><div class="event"><b>20세기 · 전쟁과 코코넛 트리 감옥</b><p>푸꾸옥 교도소, 흔히 코코넛 트리 감옥으로 알려진 장소는 전쟁과 수용의 역사를 보여 주는 기념 공간입니다. 휴양지의 밝은 이미지 이면에 있는 현대사의 무게를 학생들과 함께 생각해 볼 수 있는 장소입니다.</p></div><div class="event"><b>2000년대 · 자연 보전과 관광 개발</b><p>푸꾸옥은 국립공원·산호초·해양 생태를 보전하는 동시에 국제 관광 중심지로 개발되었습니다. 2004년 정부는 지역 관광 중심지 발전 방향을 승인했고, 2006년에는 관련 생태·생물권 보전의 중요성이 국제적으로도 소개되었습니다.</p></div><div class="event"><b>오늘 · 어촌에서 국제 휴양지로</b><p>국제공항, 대형 리조트, 테마파크, 케이블카가 들어서면서 섬의 경제 중심은 어업만이 아니라 관광·서비스업으로 크게 넓어졌습니다. 다만 후추밭·진주·느억맘·항구와 야시장은 여전히 지역 정체성을 보여 주는 중요한 생활문화입니다.</p></div></div></section>
-    <section class="section"><h2>현재의 산업과 문화</h2><div class="card"><h3>어업·느억맘·후추</h3><p>섬의 바다와 어촌은 해산물 식문화의 기반이고, 생선소스 느억맘은 대표적인 지역 특산품입니다. 후추 농장과 진주 관련 상품도 관광객이 접하는 지역 산업입니다.</p></div><div class="card"><h3>사원·시장·기념 공간</h3><p>딘꺼우 사원과 까오다이 사원은 지역 신앙을, 즈엉동 야시장과 항구는 현재의 생활과 관광 소비를, 코코넛 트리 감옥은 전쟁의 기억을 보여 줍니다.</p></div><div class="card"><h3>자연·관광 개발의 균형</h3><p>북부 국립공원과 남부 산호초·섬 생태는 푸꾸옥의 중요한 자산입니다. 바다 일정에서는 저렴한 업체보다 허가된 운영사, 구명조끼, 기상 악화 취소 기준을 우선 확인해야 합니다.</p></div></section>
-    <section class="section"><h2>1월 기후와 여행 준비</h2><div class="card"><h3>건기지만 바다 상태는 별도 확인</h3><p>일반적으로 11월~4월은 건기, 5월~10월은 우기로 구분하며 1월은 비교적 비가 적고 해변 활동에 좋은 시기입니다. 그러나 바람과 파도에 따라 케이블카·해상 투어가 바뀔 수 있으므로 출발 직전 예보를 확인합니다.</p></div><div class="card"><p><b>낮</b> 반팔·얇은 긴팔·통풍 좋은 긴바지<br><b>햇빛</b> 모자·선글라스·선크림<br><b>실내</b> 에어컨용 얇은 겉옷<br><b>바다</b> 방수팩·여벌 옷·멀미약·미끄럼 방지 신발</p></div></section>
-    <section class="section"><h2>여행 기본 정보</h2><div class="card"><p><b>공항</b> 푸꾸옥 국제공항 코드는 PQC이며 섬 남부 즈엉떠 일대에 있습니다.<br><b>시간</b> 베트남은 한국보다 2시간 느립니다(UTC+7).<br><b>통화</b> 베트남 동(VND). 시장·노점에는 소액 현금이 편합니다.<br><b>전압</b> 220V. 충전기와 플러그 형태는 숙소별로 확인합니다.<br><b>이동</b> 11명은 12~16인승 기사 포함 차량 또는 7인승 2대가 현실적입니다.</p></div></section>
-    <section class="section"><h2>이번 여행에 적용하기</h2><div class="card"><p>역사와 문화를 보고 싶다면 중부의 딘꺼우·야시장, 남부의 호국사·코코넛 트리 감옥 중 한두 곳을 선택합니다. 어르신과 학생이 함께 움직이는 날에는 한낮의 긴 야외 동선을 피하고, 오전·늦은 오후 관광과 중간 휴식을 배치합니다.</p></div></section>
-    <section class="section"><h2>출처와 재확인</h2><p class="source"><a href="https://dulich.phuquoc.gov.vn/en/introduction" target="_blank" rel="noopener">푸꾸옥 관광 공식 · 기본정보</a><br><a href="https://dulich.phuquoc.gov.vn/en/history" target="_blank" rel="noopener">푸꾸옥 관광 공식 · 역사</a><br><a href="https://vietnamtourism.gov.vn/en/printer/6762?type=1" target="_blank" rel="noopener">베트남 관광청 · 푸꾸옥</a><br><a href="https://vietnam.travel/places-to-go/southern-vietnam/phu-quoc" target="_blank" rel="noopener">Vietnam Tourism · Phu Quoc</a></p><p class="source">인구·면적·행정 범위, 시설 운영시간, 기후·해상 운항은 시점에 따라 달라질 수 있으므로 2027년 출발 전에 공식 채널에서 다시 확인합니다.</p></section>
-    <p class="footer">2027 푸꾸옥 가족여행 정보 페이지<br>배경을 알고 보면 여행지가 더 선명해져요.</p>
+  <header class="hero"><div class="wrap">
+    <a class="back" href="index.html">← 우리 가족 푸꾸옥 여행</a>
+    <h1>푸꾸옥 알아보기</h1>
+    <p class="hero-copy">우리가 방문할 섬을 조금 더 깊이 이해해 보는 페이지</p>
+  </div></header>
+
+  <main class="wrap">
+    <section class="section" id="overview">
+      <div class="section-head"><h2>푸꾸옥은 어떤 곳인가요?</h2></div>
+      <p class="note" style="margin-top:-6px">푸꾸옥(Phú Quốc)은 베트남 남서쪽 태국만에 자리한 섬이자, 해양 생활문화와 대규모 휴양지가 함께 있는 지역입니다.</p>
+      <div class="card"><p>섬의 매력은 단순히 바다와 리조트에만 있지 않습니다. 오랫동안 어업과 항구를 중심으로 생활해 온 지역에 후추·느억맘·진주 같은 특산업이 더해졌고, 최근에는 국제공항과 테마파크·리조트가 결합한 관광지로 빠르게 성장했습니다. 그래서 하루 일정 안에서도 전통시장과 사원, 대형 리조트와 케이블카 풍경이 함께 나타납니다.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>숫자로 보는 푸꾸옥</h2></div>
+      <div class="stats">
+        <div class="stat"><b>약 103,000명</b><span>공식 관광 안내의 인구 소개 기준</span></div>
+        <div class="stat"><b>59,923ha</b><span>군도 전체 자연 면적 약 599㎢</span></div>
+        <div class="stat"><b>567㎢</b><span>푸꾸옥 본섬 면적 소개 기준</span></div>
+        <div class="stat"><b>150km</b><span>해안선 길이 소개 기준</span></div>
+      </div>
+      <p class="fact" style="margin-top:10px"><b>수치 읽는 법</b><br>인구와 면적은 집계 시점과 행정 범위에 따라 달라질 수 있습니다. 위 수치는 푸꾸옥 관광 공식 안내가 소개하는 기준이며, 여행 감각으로는 '큰 섬에 여러 관광 권역이 길게 펼쳐져 있다'고 이해하면 좋습니다.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>북부·중부·남부의 성격</h2></div>
+      <div class="region">
+        <div class="r-ocean"><b>북부</b><span>자연·대형 리조트·테마파크<br>이번 여행의 필수 관광권</span></div>
+        <div class="r-coral"><b>중부</b><span>공항·즈엉동·롱비치<br>식당·마트·카페 거점</span></div>
+        <div class="r-palm"><b>남부</b><span>안터이 군도·케이블카<br>해상 관광과 선셋</span></div>
+      </div>
+      <div class="card"><p>북부 끝에서 남부까지는 생각보다 멀기 때문에 11명 가족은 숙소를 권역에 맞추는 것이 중요합니다. 이번 여행은 북부에서 사파리·빈원더스·그랜드월드를 보고, 중부에 머물면서 남부를 하루 다녀오는 방식으로 이동 피로를 줄입니다.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>푸꾸옥의 큰 역사 흐름</h2></div>
+      <div class="stamp-timeline">
+        <div class="stamp-event"><b>17세기 후반 · 정착과 해상 교역</b><p>공식 역사 안내는 1671년 중국계 이주민 막끄우(Mạc Cửu)가 남쪽 바다로 이동한 일을 푸꾸옥과 하띠엔 일대의 정착·개발 흐름과 연결해 설명합니다. 당시 이 지역은 캄보디아·베트남·중국계 세력이 오가던 해상 교역권이었습니다.</p></div>
+        <div class="stamp-event"><b>18~19세기 · 하띠엔과 응우옌 왕조의 영향</b><p>막씨 가문이 하띠엔 일대에서 세력을 형성한 뒤 이 지역은 베트남 남부의 정치·행정 질서와 점차 연결되었습니다. 섬의 항구와 어촌은 독립된 생활권이면서도 메콩 델타와 주변 해역을 잇는 공간으로 기능했습니다.</p></div>
+        <div class="stamp-event"><b>20세기 · 전쟁과 코코넛 트리 감옥</b><p>푸꾸옥 교도소, 흔히 코코넛 트리 감옥으로 알려진 장소는 전쟁과 수용의 역사를 보여 주는 기념 공간입니다. 휴양지의 밝은 이미지 이면에 있는 현대사의 무게를 학생들과 함께 생각해 볼 수 있는 장소입니다.</p></div>
+        <div class="stamp-event"><b>2000년대 · 자연 보전과 관광 개발</b><p>푸꾸옥은 국립공원·산호초·해양 생태를 보전하는 동시에 국제 관광 중심지로 개발되었습니다. 2004년 정부는 지역 관광 중심지 발전 방향을 승인했고, 2006년에는 관련 생태·생물권 보전의 중요성이 국제적으로도 소개되었습니다.</p></div>
+        <div class="stamp-event"><b>오늘 · 어촌에서 국제 휴양지로</b><p>국제공항, 대형 리조트, 테마파크, 케이블카가 들어서면서 섬의 경제 중심은 어업만이 아니라 관광·서비스업으로 크게 넓어졌습니다. 다만 후추밭·진주·느억맘·항구와 야시장은 여전히 지역 정체성을 보여 주는 중요한 생활문화입니다.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>현재의 산업과 문화</h2></div>
+      <div class="card"><h3>어업·느억맘·후추</h3><p>섬의 바다와 어촌은 해산물 식문화의 기반이고, 생선소스 느억맘은 대표적인 지역 특산품입니다. 후추 농장과 진주 관련 상품도 관광객이 접하는 지역 산업입니다.</p></div>
+      <div class="card"><h3>사원·시장·기념 공간</h3><p>딘꺼우 사원과 까오다이 사원은 지역 신앙을, 즈엉동 야시장과 항구는 현재의 생활과 관광 소비를, 코코넛 트리 감옥은 전쟁의 기억을 보여 줍니다.</p></div>
+      <div class="card"><h3>자연·관광 개발의 균형</h3><p>북부 국립공원과 남부 산호초·섬 생태는 푸꾸옥의 중요한 자산입니다. 바다 일정에서는 저렴한 업체보다 허가된 운영사, 구명조끼, 기상 악화 취소 기준을 우선 확인해야 합니다.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>1월 기후와 여행 준비</h2></div>
+      <div class="card"><h3>건기지만 바다 상태는 별도 확인</h3><p>일반적으로 11월~4월은 건기, 5월~10월은 우기로 구분하며 1월은 비교적 비가 적고 해변 활동에 좋은 시기입니다. 그러나 바람과 파도에 따라 케이블카·해상 투어가 바뀔 수 있으므로 출발 직전 예보를 확인합니다.</p></div>
+      <div class="callout-sand" style="margin-top:10px">
+        <p><b>낮</b> 반팔·얇은 긴팔·통풍 좋은 긴바지<br><b>햇빛</b> 모자·선글라스·선크림<br><b>실내</b> 에어컨용 얇은 겉옷<br><b>바다</b> 방수팩·여벌 옷·멀미약·미끄럼 방지 신발</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>여행 기본 정보</h2></div>
+      <div class="card"><p><b>공항</b> 푸꾸옥 국제공항 코드는 PQC이며 섬 남부 즈엉떠 일대에 있습니다.<br><b>시간</b> 베트남은 한국보다 2시간 느립니다(UTC+7).<br><b>통화</b> 베트남 동(VND). 시장·노점에는 소액 현금이 편합니다.<br><b>전압</b> 220V. 충전기와 플러그 형태는 숙소별로 확인합니다.<br><b>이동</b> 11명은 12~16인승 기사 포함 차량 또는 7인승 2대가 현실적입니다.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>이번 여행에 적용하기</h2></div>
+      <div class="card"><p>역사와 문화를 보고 싶다면 중부의 딘꺼우·야시장, 남부의 호국사·코코넛 트리 감옥 중 한두 곳을 선택합니다. 어르신과 학생이 함께 움직이는 날에는 한낮의 긴 야외 동선을 피하고, 오전·늦은 오후 관광과 중간 휴식을 배치합니다.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>출처와 재확인</h2></div>
+      <p class="source"><a href="https://dulich.phuquoc.gov.vn/en/introduction" target="_blank" rel="noopener">푸꾸옥 관광 공식 · 기본정보</a><br><a href="https://dulich.phuquoc.gov.vn/en/history" target="_blank" rel="noopener">푸꾸옥 관광 공식 · 역사</a><br><a href="https://vietnamtourism.gov.vn/en/printer/6762?type=1" target="_blank" rel="noopener">베트남 관광청 · 푸꾸옥</a><br><a href="https://vietnam.travel/places-to-go/southern-vietnam/phu-quoc" target="_blank" rel="noopener">Vietnam Tourism · Phu Quoc</a></p>
+      <p class="source" style="margin-top:8px">인구·면적·행정 범위, 시설 운영시간, 기후·해상 운항은 시점에 따라 달라질 수 있으므로 2027년 출발 전에 공식 채널에서 다시 확인합니다.</p>
+      <p class="source" style="margin-top:8px">숙소·맛집·관광지 36곳을 뒷받침하는 실제 인용 자료 159개 + 추가로 조사한 블로그·카페 126개는 <a href="references.html">조사 참고 자료</a>에서 전부 확인할 수 있습니다.</p>
+    </section>
+
+    <p class="footer">2027 푸꾸옥 가족여행 정보 페이지 · v2 디자인<br>배경을 알고 보면 여행지가 더 선명해져요.</p>
   </main>
-  <nav class="subnav" aria-label="페이지 이동"><a href="index.html">일정</a><a class="active" href="island.html">정보</a><a href="places.html">숙소·지도</a></nav>
+
+  <nav class="subnav" aria-label="페이지 이동"><a href="index.html">일정</a><a class="active" href="island.html">정보</a><a href="places.html">숙소·지도</a><a href="references.html">출처</a></nav>
 </body>
 </html>
