@@ -215,6 +215,8 @@ main { padding: 0 16px 100px; }
   font-size: 13px; font-weight: 700; min-height: 44px;
 }
 .quick-actions a:hover { border-color: var(--ink); }
+.quick-actions a.full { grid-column: 1 / -1; }
+.quick-actions a.subtle { color: var(--muted); font-weight: 500; background: transparent; }
 
 /* ---------- day timeline (색상코드 제거 — 전부 ink 하나로 통일, 태그로만 성격 표시) ---------- */
 .day-jump { display: flex; gap: 7px; overflow-x: auto; padding: 2px 1px 10px; scrollbar-width: none; }
