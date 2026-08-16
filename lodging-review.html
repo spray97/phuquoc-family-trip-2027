@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b2233">
+  <title>첫날 숙소 3곳 비교검토</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <style>
+    /* ---- lodging-review.html 전용: 비교표 + 숙소 카드 (site-wide 카드 규칙 재사용) ---- */
+    .venue-map { border-radius: var(--r-md); overflow: hidden; height: 300px; margin-bottom: 8px; border: 1px solid var(--hairline); }
+    .status-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+    .status-chip { font-family: var(--f-mono); font-size: 11px; font-weight: 700; border-radius: var(--r-pill); padding: 5px 11px; border: 1px solid; }
+    .status-chip.ok { background: var(--palm-tint); color: var(--palm-deep); border-color: var(--palm-tint-line); }
+    .status-chip.warn { background: var(--coral-tint); color: var(--coral-deep); border-color: var(--coral-tint-line); }
+    .table-scroll { overflow-x: auto; border-radius: var(--r-md); border: 1px solid var(--hairline); box-shadow: var(--shadow-tile); }
+    table.compare { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 12.5px; background: var(--canvas); }
+    table.compare th, table.compare td { text-align: left; padding: 11px 13px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+    table.compare th { font-family: var(--f-display); font-weight: 600; font-size: 12.5px; background: var(--sand); color: var(--ink); }
+    table.compare tr:last-child td { border-bottom: none; }
+    table.compare td.label { font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
+    table.compare td.flag-warn { background: var(--coral-tint); }
+    table.compare td.flag-ok { background: var(--ocean-tint); }
+    .venue-cards { display: grid; gap: 16px; margin-top: 14px; }
+    .venue-card { background: var(--canvas); border: 1px solid var(--hairline); border-radius: var(--r-md); box-shadow: var(--shadow-tile); overflow: hidden; }
+    .venue-head { padding: 16px 16px 0; }
+    .pill { display: inline-block; font-size: 11px; font-weight: 700; border-radius: var(--r-pill); padding: 4px 10px; margin-bottom: 8px; }
+    .pill.ocean { background: var(--ocean-tint); color: var(--ocean-deep); }
+    .pill.coral { background: var(--coral-tint); color: var(--coral-deep); }
+    .pill.palm { background: var(--palm-tint); color: var(--palm-deep); }
+    .venue-head h3 { font-family: var(--f-display); font-weight: 600; font-size: 18px; margin: 0 0 4px; letter-spacing: -.01em; }
+    .venue-head .addr { font-size: 12px; color: var(--muted); margin: 0; }
+    .venue-body { padding: 13px 16px 16px; display: grid; gap: 11px; }
+    .highlights { background: var(--sand); border-radius: var(--r-md); padding: 12px 14px; font-size: 13px; }
+    .highlights strong { display: block; color: var(--ink); margin-bottom: 6px; font-size: 12px; font-family: var(--f-display); }
+    .highlights ul { margin: 0; padding-left: 18px; color: #4a4536; }
+    .highlights li { margin-bottom: 4px; }
+    .links-block strong { display: block; font-size: 12px; font-family: var(--f-display); margin-bottom: 6px; color: var(--ink); }
+    .links-block ol { margin: 0; padding-left: 18px; font-size: 12.5px; }
+    .links-block li { margin-bottom: 4px; }
+    .links-block a { color: var(--ocean-deep); font-weight: 600; text-decoration: none; }
+    .links-block a:hover { text-decoration: underline; }
+    .issue-card { background: var(--coral-tint); border: 1px solid var(--coral-tint-line); border-radius: var(--r-lg); padding: 18px; margin-bottom: 12px; }
+    .issue-card.fixed { background: var(--ocean-tint); border-color: var(--ocean-tint-line); }
+    .issue-card h3 { margin: 0 0 8px; font-family: var(--f-display); font-size: 15px; }
+    .issue-card p { margin: 0 0 8px; font-size: 13px; color: #4a4536; line-height: 1.7; }
+    .issue-card p:last-child { margin-bottom: 0; }
+    .issue-card code { background: rgba(11,34,51,.06); padding: 1px 5px; border-radius: 4px; font-family: var(--f-mono); font-size: 11.5px; }
+    .badge { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 6px; }
+    .badge.yes { background: var(--palm-tint); color: var(--palm-deep); }
+    .badge.no { background: var(--coral-tint); color: var(--coral-deep); }
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="wrap">
+    <a class="back" href="index.html">← 우리 가족 푸꾸옥 여행</a>
+    <h1>첫날 숙소 3곳 비교검토</h1>
+    <p class="hero-copy">2027.01.19~21 · 아고라 등에서 직접 조사한 3개 후보를 전문 서브에이전트가 사실 검증하고, 네이버 블로그 실투숙 후기를 찾아 연결했습니다.</p>
+    <div class="status-row">
+      <span class="status-chip ok">✅ 3곳 모두 네이버 실후기 확보</span>
+      <span class="status-chip ok">✅ 3곳 공식 좌표 대조 완료</span>
+      <span class="status-chip warn">⚠️ 더 레지던스 정확한 4베드룸 시세 미확인</span>
+    </div>
+  </div></header>
+
+  <main class="wrap">
+    <div class="quick-actions">
+      <a href="places.html" class="full">🏨 다른 숙소 후보 36곳 전체 보기 (숙소·먹거리 지도)</a>
+    </div>
+
+    <section class="section" id="map-section">
+      <div class="section-head"><h2>📍 위치 지도</h2><p>세 숙소 전부 즈엉또(Duong To) 코뮌 · 소나시(Sonasea) 리조트 단지 일대에 몰려 있습니다(반경 약 1km).</p></div>
+      <div id="map" class="venue-map" data-center-lat="10.1286" data-center-lng="103.981"></div>
+      <p class="note">마커를 눌러 숙소명을 확인하세요. 정확한 경로는 각 카드의 [Google 지도에서 보기 ↗]를 이용하세요.</p>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="section-head"><h2>📋 3곳 비교표</h2><p>원본 조사 + 서브에이전트 재검증 결과를 합친 최종본입니다.</p></div>
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr><th>구분</th><th>엠비치 럭셔리 빌라<br><span style="font-weight:400;color:var(--muted)">(M Villas Phu Quoc)</span></th><th>안도친 리조트 앤 스파</th><th>더 레지던스 리조트 앤 빌라</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="label">위치·공항거리</td><td>즈엉또 코뮌(즈엉바오), 소나시 단지 내. 공항까지 5~10분 <span class="badge no">15분 표기는 정정됨</span></td><td>즈엉바오 지역(소나시 단지 2구역), 공항까지 10분</td><td>바이쯔엉/즈엉바오 인근, 공항까지 10~15분, 안도친과 인접(완전 공유는 아님)</td></tr>
+            <tr><td class="label">객실 구성</td><td>4베드룸·4욕실 독채형, 거실+주방 포함</td><td>3~4베드룸, 3베드룸 기준 성인6+아동3</td><td>4베드룸·5욕실 독채형, 킹1·퀸2·싱글2</td></tr>
+            <tr><td class="label">11명 수용</td><td>1채 부족 → <b>2채 예약 필요</b></td><td>4베드룸 실투숙 8명 후기 확인 → <b>2채면 여유</b></td><td>1채당 8~9명 수준 → <b>2채 예약 필요</b></td></tr>
+            <tr><td class="label">부대시설</td><td>개인+공용 수영장, 정원, 테라스, 레스토랑, 무료주차</td><td>개인수영장, 전용해변(안도클럽), 인피니티풀, 스파, 무료 버기·자전거·카약</td><td>개인수영장·정원, 전담 집사(메종호스트), 무료버기, 쇼핑몰 내 태국식당·마사지</td></tr>
+            <tr><td class="label">조식</td><td>온사이트 레스토랑</td><td>뷔페(구성 소박, 맛은 준수) + 플로팅 조식</td><td>신축, 메뉴 매일 변경, 평가 좋음</td></tr>
+            <tr><td class="label">1박 가격대(4BR)</td><td>$264~ (약 36만원~) <span class="badge yes">확인됨</span></td><td>$184~206대 <span class="badge no">21.6만원보다 높을 가능성</span></td><td>기본 $180~, 4BR $300~600 추정 <span class="badge no">여전히 미확인</span></td></tr>
+            <tr><td class="label">실제 예약 총액(2박)</td><td>140만원</td><td>240만원</td><td>180만원</td></tr>
+            <tr><td class="label">주의사항</td><td class="flag-ok">Tripadvisor 중복 리스팅 존재 → 예약 시 상호·GPS 재대조 권장(동명이인 저평점 업체설은 정정됨)</td><td>얼리체크인·레이트체크아웃 불가</td><td class="flag-warn">일부 구역 아직 리모델링/미개발</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="section-head"><h2>🏝️ 숙소별 상세 + 네이버 실후기</h2><p>네이버 블로그는 전부 모바일 URL로 직접 접근해 본문·주소를 확인한 것만 실었습니다.</p></div>
+      <div class="venue-cards">
+
+        <div class="venue-card" data-lat="10.1330747" data-lng="103.9785308" data-name="엠비치 럭셔리 빌라 (M Villas Phu Quoc)">
+          <div class="venue-head">
+            <span class="pill ocean">해변 프라이버시 중시</span>
+            <h3>엠비치 럭셔리 빌라 (M Beach Luxury Villas / 공식명 M Villas Phu Quoc)</h3>
+            <p class="addr">Sonasea Villas &amp; Resort Complex, SR08, Duong Bao Hamlet, Duong To Commune</p>
+          </div>
+          <div class="venue-body">
+            <div class="highlights">
+              <strong>핵심 요약</strong>
+              <ul>
+                <li><b>4베드룸·4욕실</b> 독채, 거실+주방 포함, 개인+공용 수영장</li>
+                <li>외국인 후기: "지금까지 묵어본 곳 중 최고", 분실물 CCTV 추적 사례</li>
+                <li>1박 $264~(약 36만원~), 2박 실제 예약가 140만원</li>
+              </ul>
+            </div>
+            <div class="warn">⚠️ Tripadvisor에 유사 이름 리스팅 3개(M Villas / M Beach Villas / M Beach Luxury Villas) 존재. 같은 숙소의 중복 리스팅으로 추정되나 확정은 안 됨 — 예약 확인서의 상호·GPS(10.1331, 103.9785)를 재대조할 것.</div>
+            <div class="links-block">
+              <strong>네이버 블로그 실후기 (5건)</strong>
+              <ol>
+                <li><a href="https://blog.naver.com/jsm8745/224158322732" target="_blank" rel="noopener">M빌라스(엠빌라스) 푸꾸옥 — 대가족 패키지 후기</a></li>
+                <li><a href="https://blog.naver.com/dbtnsorj/224240070352" target="_blank" rel="noopener">프라이빗 비치·수영장 M빌라 내돈내산 후기</a> <span style="color:var(--muted)">(주소 직접 대조 확인)</span></li>
+                <li><a href="https://blog.naver.com/p_nowhere/223285631886" target="_blank" rel="noopener">M빌라스푸꾸옥 후기 — 6명 가족여행</a> <span style="color:var(--muted)">(구글맵 좌표 직접 대조 확인)</span></li>
+                <li><a href="https://blog.naver.com/92_jiddong/223640863067" target="_blank" rel="noopener">가성비 대형 풀빌라 엠빌라 — 대가족 안성맞춤</a></li>
+                <li><a href="https://blog.naver.com/jjacmn/223769640944" target="_blank" rel="noopener">M Villas에서 완벽한 휴양을</a></li>
+              </ol>
+              <strong style="margin-top:10px">예약 플랫폼 후기 (원본 조사)</strong>
+              <ol>
+                <li><a href="https://www.tripadvisor.com/Hotel_Review-g469418-d23309214-Reviews-M_Beach_Luxury_Villas_Phu_Quoc-Phu_Quoc_Island_Kien_Giang_Province.html" target="_blank" rel="noopener">Tripadvisor 후기</a></li>
+                <li><a href="https://www.booking.com/hotel/vn/m-beach-luxury-villas-phu-quoc.html" target="_blank" rel="noopener">Booking.com 후기</a></li>
+              </ol>
+            </div>
+            <div class="card-action"><a class="btn btn-primary" style="width:100%" href="https://www.google.com/maps/search/?api=1&query=10.1330747,103.9785308" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div>
+          </div>
+        </div>
+
+        <div class="venue-card" data-lat="10.127048" data-lng="103.9800371" data-name="안도친 리조트 앤 스파 (Andochine Resort & Spa)">
+          <div class="venue-head">
+            <span class="pill palm">가장 안전한 선택</span>
+            <h3>안도친 리조트 앤 스파 (Andochine Resort &amp; Spa)</h3>
+            <p class="addr">V07–SV06, Sonasea Villas &amp; Resort Complex 2, Duong Bao Hamlet, Duong To Commune</p>
+          </div>
+          <div class="venue-body">
+            <div class="highlights">
+              <strong>핵심 요약</strong>
+              <ul>
+                <li>3~4베드룸, 전용 해변(안도 클럽)·인피니티풀·스파, 무료 버기·자전거·카약</li>
+                <li>대가족(8명 실투숙 후기 확인) 최적, 매니저 밀착 서비스 극찬 다수</li>
+                <li>1박 $184~206대(원 조사 21.6만원보다 높을 가능성), 2박 실제 예약가 240만원</li>
+              </ul>
+            </div>
+            <div class="warn">⚠️ 얼리체크인·레이트체크아웃이 안 됐다는 후기 있음 — 풀 부킹 시즌엔 특히 유의.</div>
+            <div class="links-block">
+              <strong>네이버 블로그 실후기 (7건)</strong>
+              <ol>
+                <li><a href="https://blog.naver.com/lsy5088/224314329973" target="_blank" rel="noopener">대가족 복층 숙소 안도친 리조트 후기</a></li>
+                <li><a href="https://blog.naver.com/hyh4764/224352753233" target="_blank" rel="noopener">대가족 4베드룸 후기(조식·수영장·공항샌딩)</a></li>
+                <li><a href="https://blog.naver.com/flower1219/223652391160" target="_blank" rel="noopener">3대가 함께하는 가족여행 5박 후기</a></li>
+                <li><a href="https://blog.naver.com/bogibogi1203/223970171476" target="_blank" rel="noopener">안도치네 빌라 리조트 앤 스파 추천</a></li>
+                <li><a href="https://blog.naver.com/wldushoy/223854343286" target="_blank" rel="noopener">중부-소나시야시장 프라이빗 풀빌라 소개/조식</a></li>
+                <li><a href="https://blog.naver.com/luminous_jane/223617496199" target="_blank" rel="noopener">중부 풀빌라 리조트 추천</a></li>
+                <li><a href="https://blog.naver.com/applejun25/223568660254" target="_blank" rel="noopener">안도친 리조트 &amp; 스파 장단점</a></li>
+              </ol>
+              <strong style="margin-top:10px">예약 플랫폼 후기 (원본 조사)</strong>
+              <ol>
+                <li><a href="https://www.tripadvisor.com/Hotel_Review-g21363541-d21387401-Reviews-Andochine_Resort_Spa_Phu_Quoc-Duong_Bao_Duong_To_Phu_Quoc_Island_Kien_Giang_Pr.html" target="_blank" rel="noopener">Tripadvisor 후기</a></li>
+                <li><a href="https://kr.trip.com/hotels/phu-quoc-island-hotel-detail-78463523/andochine-resort-spa-phu-quoc/review.html" target="_blank" rel="noopener">Trip.com 한국어 후기 198건</a></li>
+              </ol>
+            </div>
+            <div class="card-action"><a class="btn btn-primary" style="width:100%" href="https://www.google.com/maps/search/?api=1&query=10.127048,103.9800371" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div>
+          </div>
+        </div>
+
+        <div class="venue-card" data-lat="10.1257311" data-lng="103.9864135" data-name="더 레지던스 리조트 앤 빌라 (The Residence Resort & Villas)">
+          <div class="venue-head">
+            <span class="pill coral">신축·프라이빗 서비스</span>
+            <h3>더 레지던스 리조트 앤 빌라 (The Residence Resort &amp; Villas)</h3>
+            <p class="addr">Zone 1, Duc Viet Tourist Area, Bai Truong, Duong To Commune</p>
+          </div>
+          <div class="venue-body">
+            <div class="highlights">
+              <strong>핵심 요약</strong>
+              <ul>
+                <li>4베드룸·5욕실 독채(킹1·퀸2·싱글2), 전담 집사(메종호스트) 서비스</li>
+                <li>직원 친절·조용하고 프라이빗한 분위기, 신축이라 조식 메뉴 매일 변경</li>
+                <li>2박 실제 예약가 180만원 — <b>4베드룸 정확 시세는 여전히 미확인</b>(기본 $180~, 성수기 프리미엄 시 $300~600 추정)</li>
+              </ul>
+            </div>
+            <div class="warn">⚠️ 일부 구역이 아직 리모델링·미개발 상태라는 후기 있음. 안도친과 완전히 해변을 "공유"하진 않고 각자 프라이빗 비치 보유.</div>
+            <div class="links-block">
+              <strong>네이버 블로그 실후기 (4건)</strong>
+              <ol>
+                <li><a href="https://blog.naver.com/cumania92/224108592313" target="_blank" rel="noopener">더 레지던스 리조트 &amp; 빌라 솔직 후기</a> <span style="color:var(--muted)">(개인방+화장실 니즈)</span></li>
+                <li><a href="https://blog.naver.com/eunbi1025/224162035661" target="_blank" rel="noopener">3층 3베드룸 가격·공항픽업·조식·수영장 후기</a></li>
+                <li><a href="https://blog.naver.com/lkjasdfe/224161440418" target="_blank" rel="noopener">프라이빗 풀빌라 리조트 럭셔리 숙소 후기</a></li>
+                <li><a href="https://blog.naver.com/orgin_official/224335420892" target="_blank" rel="noopener">아기랑 풀빌라 비용 내돈내산 가성비 후기 — 대가족 추천</a></li>
+              </ol>
+              <strong style="margin-top:10px">예약 플랫폼 후기 (원본 조사)</strong>
+              <ol>
+                <li><a href="https://www.tripadvisor.com/Hotel_Review-g1184676-d26808922-Reviews-The_Residence_Resort_Villas_Phu_Quoc-Duong_To_Phu_Quoc_Island_Kien_Giang_Province.html" target="_blank" rel="noopener">Tripadvisor 후기</a></li>
+                <li><a href="https://hyedd.co.kr/entry/2025%EB%85%84-2%EC%9B%94-%EB%B2%A0%ED%8A%B8%EB%82%A8-%ED%91%B8%EA%BE%B8%EC%98%A5%EC%97%AC%ED%96%89-%EA%B2%BD%EB%B9%84-%EC%A0%95%EB%A6%AC-%EC%95%88-%ED%91%B8-%ED%98%B8%ED%85%94-%EB%8D%94-%EB%A0%88%EC%A7%80%EB%8D%98%EC%8A%A4-%EB%A6%AC%EC%A1%B0%ED%8A%B8-%EC%95%A4-%EB%B9%8C%EB%9D%BC-%ED%91%B8%EA%BE%B8%EC%98%A5-%ED%97%A4%EB%B0%94%ED%8F%AC%EC%9C%A0%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4" target="_blank" rel="noopener">국내 블로그(티스토리) 실투숙 후기</a></li>
+              </ol>
+            </div>
+            <div class="card-action"><a class="btn btn-primary" style="width:100%" href="https://www.google.com/maps/search/?api=1&query=10.1257311,103.9864135" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="verify">
+      <div class="section-head"><h2>🔍 검증 중 발견한 이슈</h2><p>전문 서브에이전트 3인 병렬 검증 + 직접 재검증(2026-08-16) 과정에서 나온 핵심 사항입니다.</p></div>
+
+      <div class="issue-card fixed">
+        <h3>✅ (정정) 엠비치 럭셔리 빌라 "동명이인 저평점 업체" 우려 — 근거 부족으로 확인</h3>
+        <p>원본 조사엔 "엠비치 빌라(럭셔리 표기 없음)"라는 별개의 저평점 업체가 있다는 주의사항이 있었습니다. 재검증 결과, 이 숙소의 공식 명칭은 <code>M Villas Phu Quoc</code>이고 "엠비치 럭셔리 빌라"는 OTA가 붙인 마케팅 별칭 — 같은 숙소입니다.</p>
+        <p>네이버 블로그 본문의 정확한 주소·구글맵 좌표를 직접 대조한 결과, "소나시야시장 인근·중부"라고 부르는 그 숙소가 바로 이 대상 숙소(Duong Bao, Sonasea 단지) 자체였습니다. 안도친·더 레지던스도 같은 Sonasea 단지 인근에 있어 세 숙소 모두 한국 블로거들이 "중부"라고 부르는 동일 권역입니다.</p>
+        <p>다만 Tripadvisor에는 여전히 유사 이름 리스팅 3개가 있고 그중 하나는 평점이 낮으므로(같은 숙소의 오래된 중복 리스팅으로 추정), 예약 확인서의 상호·GPS 재대조는 습관적으로 해두길 권장합니다.</p>
+      </div>
+
+      <div class="issue-card">
+        <h3>⚠️ 더 레지던스 — 정확한 4베드룸 시세 여전히 미확인</h3>
+        <p>공식 사이트는 기본가($180~)만 공개하고 4베드룸 독채 시세는 게시하지 않습니다. 성수기(1월) 프리미엄이 크게 반영될 수 있어 $300~600/박까지 추정 범위가 넓습니다. 예약 시점에 직접 견적을 받아 확정하는 걸 권장합니다.</p>
+      </div>
+
+      <div class="issue-card">
+        <h3>⚠️ 안도친 — 4베드룸 "9명 실투숙" 정확 매치는 못 찾음</h3>
+        <p>"8명 투숙" 후기는 확인됐지만 원본의 "9명" 수치와 정확히 일치하는 후기는 찾지 못했습니다. 2채 예약 시 11명을 커버한다는 결론 자체는 합리적 추정으로 유지됩니다.</p>
+      </div>
+
+      <div class="section-head" style="margin-top:24px"><h2>항목별 검증 결과 표</h2></div>
+      <div class="table-scroll">
+        <table class="compare">
+          <thead><tr><th>항목</th><th>판정</th><th>비고</th></tr></thead>
+          <tbody>
+            <tr><td class="label">엠비치: 공항까지 15분</td><td><span class="badge no">불일치</span></td><td>공식 사이트·타 소스는 5~10분으로 기재</td></tr>
+            <tr><td class="label">엠비치: 4베드룸·4욕실, $264~</td><td><span class="badge yes">확인됨</span></td><td>공식사이트·Airbnb 교차 확인</td></tr>
+            <tr><td class="label">안도친: 위치·부대시설</td><td><span class="badge yes">확인됨</span></td><td>공식사이트·복수 후기 일치</td></tr>
+            <tr><td class="label">안도친: 1박 21.6만원(프로모션)</td><td><span class="badge no">확인불가</span></td><td>실제 시세는 $184~206대로 확인, 원화 환산 시 더 높을 가능성</td></tr>
+            <tr><td class="label">안도친: 얼리체크인/레이트체크아웃 불가</td><td><span class="badge yes">확인됨</span></td><td></td></tr>
+            <tr><td class="label">더 레지던스: 위치·시설</td><td><span class="badge yes">확인됨</span></td><td></td></tr>
+            <tr><td class="label">더 레지던스: 정확한 시세</td><td><span class="badge no">여전히 미확인</span></td><td>기본가만 공개, 4베드룸은 예약 시점 직접 견적 필요</td></tr>
+            <tr><td class="label">더 레지던스: 안도친과 해변 공유</td><td><span class="badge no">부분 수정</span></td><td>같은 권역이지만 각자 프라이빗 비치 보유</td></tr>
+            <tr><td class="label">더 레지던스: 일부 구역 미개발</td><td><span class="badge yes">확인됨</span></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="footer">우리 가족 푸꾸옥 여행 · 첫날 숙소 검토 · 검증일 2026-08-16</p>
+  </main>
+
+  <nav class="subnav" aria-label="페이지 이동"><a href="index.html">일정</a><a href="island.html">정보</a><a href="places.html">숙소·지도</a><a class="active" href="lodging-review.html">첫날숙소</a><a href="references.html">출처</a></nav>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mapEl = document.getElementById('map');
+      const centerLat = parseFloat(mapEl.dataset.centerLat);
+      const centerLng = parseFloat(mapEl.dataset.centerLng);
+      const map = L.map(mapEl).setView([centerLat, centerLng], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
+      }).addTo(map);
+      const colors = ['#0e7d9c', '#1f5c46', '#c85a3d'];
+      let i = 0;
+      document.querySelectorAll('.venue-card[data-lat]').forEach(card => {
+        const lat = parseFloat(card.dataset.lat), lng = parseFloat(card.dataset.lng);
+        if (isNaN(lat) || isNaN(lng)) return;
+        L.circleMarker([lat, lng], { radius: 9, color: '#fff', weight: 2, fillColor: colors[i % colors.length], fillOpacity: 1 })
+          .addTo(map).bindPopup(card.dataset.name || '');
+        i++;
+      });
+    });
+  </script>
+  <script>if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {})); }</script>
+</body>
+</html>

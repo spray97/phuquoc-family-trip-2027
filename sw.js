@@ -4,13 +4,14 @@
 // 이미지·폰트·Leaflet 등 외부(cross-origin) 요청은 건드리지 않고 그대로 네트워크로 보낸다.
 //
 // 버전을 올리면(예: v2) 이전 캐시가 자동 삭제되고 새 자산으로 갱신된다.
-const CACHE_NAME = 'phuquoc-2027-v1';
+const CACHE_NAME = 'phuquoc-2027-v2';
 const CORE_ASSETS = [
   './',
   'index.html',
   'island.html',
   'places.html',
   'references.html',
+  'lodging-review.html',
   'style.css',
 ];
 
